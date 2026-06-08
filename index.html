@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PurePath | AI Microplastic Auditor</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- ─── URGENCY BAR ─────────────────────────────────── -->
+  <div class="urgency-bar">
+    <span class="urgency-dot"></span>
+    <span class="urgency-text">NEW RESEARCH: Microplastics confirmed in 99% of human blood samples — your home is the #1 source.</span>
+    <a href="#vision" class="urgency-link">See how PurePath detects them →</a>
+  </div>
+
+  <!-- ─── NAV ─────────────────────────────────────────── -->
+  <nav class="nav">
+    <a href="#top" class="brand">
+      <span class="brand-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <rect x="3" y="3" width="7" height="7" rx="1.5"/>
+          <rect x="14" y="3" width="7" height="7" rx="1.5"/>
+          <rect x="3" y="14" width="7" height="7" rx="1.5"/>
+          <rect x="14" y="14" width="7" height="7" rx="1.5"/>
+        </svg>
+      </span>
+      <span class="brand-name">Pure<span class="brand-accent">Path</span></span>
+    </a>
+    <div class="nav-links">
+      <a href="#science">SCIENCE</a>
+      <a href="#download" class="active">DOWNLOAD</a>
+    </div>
+    <a href="#download" class="btn-outline">GET THE APP</a>
+  </nav>
+
+  <!-- ─── HERO ────────────────────────────────────────── -->
+  <section class="hero" id="top">
+    <div class="hero-glow"></div>
+
+    <!-- floating pills -->
+    <div class="floating-pills">
+      <div class="pill pill-tl">
+        <span class="pill-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h4l3-9 4 18 3-9h4"/></svg>
+        </span>
+        <span>YOUR NYLON SHEETS: <em>LEACHING?</em></span>
+      </div>
+
+      <div class="pill pill-tr">
+        <span class="pill-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12c4-3 14-3 18 0"/><path d="M3 16c4-3 14-3 18 0"/></svg>
+        </span>
+        <span>NON-STICK COOKWARE: <em>PEELING?</em></span>
+      </div>
+
+      <div class="pill pill-ml">
+        <span class="pill-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h4l3-9 4 18 3-9h4"/></svg>
+        </span>
+        <span>YOUR PILLOWS: <em>SHEDDING?</em></span>
+      </div>
+
+      <div class="pill pill-mr">
+        <span class="pill-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12c4-3 14-3 18 0"/><path d="M3 16c4-3 14-3 18 0"/></svg>
+        </span>
+        <span>SHOWER CURTAIN: <em>OFF-GASSING?</em></span>
+      </div>
+
+      <div class="pill pill-bl">
+        <span class="pill-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 4l-2 6h16l-2-6"/><path d="M4 10v10h16V10"/></svg>
+        </span>
+        <span>LAUNDRY VAPORS: <em>INHALED?</em></span>
+      </div>
+
+      <div class="pill pill-br">
+        <span class="pill-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3"/></svg>
+        </span>
+        <span>TAP WATER: <em>FIBER COUNT?</em></span>
+      </div>
+    </div>
+
+    <!-- central disc -->
+    <div class="hero-center">
+      <div class="disc">
+        <div class="disc-inner">
+          <p class="kicker">ON AVERAGE, YOU ARE CONSUMING</p>
+          <h1 class="mega">1.2</h1>
+          <p class="kicker-lg">CREDIT CARDS OF<br/>MICRO-PLASTIC EVERY WEEK</p>
+          <p class="hero-sub">Most of it comes from inside your own home. PurePath scans your kitchen, bedroom, and bathroom — then shows you exactly what to replace and why.</p>
+        </div>
+      </div>
+    </div>
+
+    <a href="#download" class="cta-button">SCAN MY HOME — IT'S FREE</a>
+    <p class="hero-trust">Used by 10,000+ health-conscious families, biohackers &amp; wellness seekers</p>
+  </section>
+
+  <!-- ─── SECTION 02 — VISION ENGINE ───────────────── -->
+  <section class="section vision" id="vision">
+    <p class="section-label">SECTION 02 — VISION ENGINE</p>
+    <h2 class="section-title">HOW THE AI <span class="cyan">SEES</span> YOUR HOME</h2>
+    <p class="section-sub">PurePath's computer vision model was trained on 2.3M surface samples to detect<br/>degradation signatures invisible to the human eye.</p>
+
+    <div class="vision-grid">
+      <div class="vision-image">
+        <div class="ai-overlay">
+          <span class="overlay-tag">TOXIC ZONE</span>
+          <span class="circle c1"></span>
+          <span class="circle c2"></span>
+          <span class="circle c3"></span>
+        </div>
+        <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=1200&q=80" alt="kitchen scene" />
+        <div class="image-caption">A. DEGRADED NON-STICK SURFACE — PTFE DETECTED</div>
+      </div>
+
+      <div class="ai-panel">
+        <p class="panel-label">PUREPATH VISION ENGINE — LIVE READ</p>
+        <h3 class="panel-title">AI TRIGGER ANALYSIS</h3>
+        <p class="panel-status"><span class="status-dot"></span> SCANNING IN PROGRESS…</p>
+
+        <ul class="trigger-list">
+          <li>
+            <span class="dot"></span>
+            <div class="trig-info">
+              <strong>0.7 Specularity Detected</strong>
+              <span>SYNTHETIC SHEEN</span>
+            </div>
+            <span class="bar"></span>
+          </li>
+          <li>
+            <span class="dot"></span>
+            <div class="trig-info">
+              <strong>Surface Pilling Count: 42</strong>
+              <span>MICROPLASTIC SHEDDING</span>
+            </div>
+            <span class="bar bar-2"></span>
+          </li>
+          <li>
+            <span class="dot"></span>
+            <div class="trig-info">
+              <strong>Scoring: 18 / 20</strong>
+              <span>EXTREME RISK</span>
+            </div>
+            <span class="bar bar-3"></span>
+          </li>
+          <li>
+            <span class="dot orange"></span>
+            <div class="trig-info">
+              <strong>PTFE Signature: Present</strong>
+              <span>CHEMICAL LEACHING</span>
+            </div>
+            <span class="bar bar-orange"></span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── SECTION 03 — 3-ROOM PROTOCOL ─────────────── -->
+  <section class="section protocol" id="protocol">
+    <h2 class="section-title">THE 3-ROOM <span class="cyan">PROTOCOL</span></h2>
+    <p class="section-sub">Contamination doesn't respect rooms. PurePath audits your entire biological<br/>environment.</p>
+
+    <div class="room-cards">
+      <article class="room-card">
+        <div class="room-img" style="background-image:url('https://images.unsplash.com/photo-1556909190-eccf4a8bf97a?w=1000&q=80')">
+          <span class="room-tag cyan-tag">CULINARY</span>
+        </div>
+        <div class="room-body">
+          <div class="room-head">
+            <span class="room-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18"/></svg>
+            </span>
+            <h3>THE KITCHEN AUDIT</h3>
+            <span class="risk-badge high">HIGH RISK</span>
+          </div>
+          <p class="room-tagline">Exposing PTFE leaching in non-stick cookware.</p>
+          <p class="room-desc">PurePath's specular analysis detects micro-abrasion signatures on coated pans, silicone utensils, and plastic cutting boards — before they end up on your plate.</p>
+          <div class="room-tags">
+            <span class="tag pink">PTFE / TEFLON</span>
+            <span class="tag pink">BPA PLASTICIZERS</span>
+            <span class="tag pink">SILICONE ADDITIVES</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="room-card">
+        <div class="room-img" style="background-image:url('https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=1000&q=80')">
+          <span class="room-tag cyan-tag">SANCTUARY</span>
+        </div>
+        <div class="room-body">
+          <div class="room-head">
+            <span class="room-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 10v10h18V10"/><path d="M3 10l9-6 9 6"/><path d="M7 20v-6h10v6"/></svg>
+            </span>
+            <h3>THE BEDROOM AUDIT</h3>
+            <span class="risk-badge critical">CRITICAL RISK</span>
+          </div>
+          <p class="room-tagline">Detecting memory foam off-gassing and synthetic fiber-fusion.</p>
+          <p class="room-desc">You spend 8 hours a night inches from your mattress. PurePath reads VOC emission signatures and fiber-fusion density in memory foam, synthetic pillows, and polyester sheets.</p>
+          <div class="room-tags">
+            <span class="tag pink">MEMORY FOAM VOCS</span>
+            <span class="tag pink">FORMALDEHYDE</span>
+            <span class="tag pink">SYNTHETIC FIBER</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="room-card">
+        <div class="room-img" style="background-image:url('https://images.unsplash.com/photo-1620626011761-996317b8d101?w=1000&q=80')">
+          <span class="room-tag cyan-tag">WELLNESS</span>
+        </div>
+        <div class="room-body">
+          <div class="room-head">
+            <span class="room-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v3"/><path d="M5 9h14a2 2 0 0 1 2 2v1H3v-1a2 2 0 0 1 2-2z"/><path d="M8 14v.5M12 14v.5M16 14v.5M10 17v.5M14 17v.5M12 20v.5"/></svg>
+            </span>
+            <h3>THE BATHROOM AUDIT</h3>
+            <span class="risk-badge moderate">MODERATE RISK</span>
+          </div>
+          <p class="room-tagline">Auditing shower curtains, bath mats, and moisture-prone surfaces.</p>
+          <p class="room-desc">Scan everyday bathroom items like shower curtains, bath mats, towels, bottles, and shower surfaces to identify material risks, moisture-prone areas, and safer swap opportunities.</p>
+          <div class="room-tags">
+            <span class="tag pink">PVC SHOWER LINERS</span>
+            <span class="tag pink">PHTHALATE BOTTLES</span>
+            <span class="tag pink">MILDEW-PRONE FOAM</span>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- ─── SECTION — MICROPLASTIC JOURNEY ───────────── -->
+  <section class="section journey" id="journey">
+    <p class="section-label">SECTION 06 — THE JOURNEY</p>
+    <h2 class="section-title">THE MICROPLASTIC <span class="cyan">JOURNEY</span></h2>
+    <p class="section-sub">From oil wells to your bloodstream — five steps that explain why<br/>contamination is unavoidable without awareness.</p>
+    <p class="journey-hint">Tap any step to explore</p>
+
+    <div class="journey-steps" id="journey-steps">
+      <div class="jstep" data-step="1" style="--step-accent:#ff8a4c">
+        <div class="jstep-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 3v18M3 12h18M5.6 5.6l12.8 12.8M5.6 18.4L18.4 5.6"/></svg>
+        </div>
+        <p class="jstep-num">STEP 1</p>
+        <p class="jstep-title">RAW FOSSIL FUELS</p>
+        <p class="jstep-sub">The Origin</p>
+      </div>
+      <div class="jstep-arrow">- - - &gt;</div>
+
+      <div class="jstep" data-step="2" style="--step-accent:#22d3ee">
+        <div class="jstep-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 9h18M8 3v4M16 3v4"/></svg>
+        </div>
+        <p class="jstep-num">STEP 2</p>
+        <p class="jstep-title">INDUSTRIAL MANUFACTURING</p>
+        <p class="jstep-sub">Mass Production</p>
+      </div>
+      <div class="jstep-arrow">- - - &gt;</div>
+
+      <div class="jstep" data-step="3" style="--step-accent:#22d3ee">
+        <div class="jstep-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 8h14l-1.5 12H6.5z"/><path d="M9 8V5a3 3 0 016 0v3"/></svg>
+        </div>
+        <p class="jstep-num">STEP 3</p>
+        <p class="jstep-title">CONSUMER PRODUCTS</p>
+        <p class="jstep-sub">In Your Home</p>
+      </div>
+      <div class="jstep-arrow">- - - &gt;</div>
+
+      <div class="jstep" data-step="4" style="--step-accent:#22d3ee">
+        <div class="jstep-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3l8 4v6c0 5-4 8-8 8s-8-3-8-8V7l8-4z"/></svg>
+        </div>
+        <p class="jstep-num">STEP 4</p>
+        <p class="jstep-title">FRAGMENTATION</p>
+        <p class="jstep-sub">Breaking Down</p>
+      </div>
+      <div class="jstep-arrow">- - - &gt;</div>
+
+      <div class="jstep" data-step="5" style="--step-accent:#ff4d8d">
+        <div class="jstep-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><circle cx="9" cy="10" r="1" fill="currentColor"/><circle cx="15" cy="10" r="1" fill="currentColor"/><path d="M8 15c1.5 1.5 6.5 1.5 8 0"/></svg>
+        </div>
+        <p class="jstep-num">STEP 5</p>
+        <p class="jstep-title">HUMAN INGESTION</p>
+        <p class="jstep-sub">Inside You</p>
+      </div>
+    </div>
+
+    <div class="journey-detail" id="journey-detail">
+      <div class="jd-icon"><div class="jd-icon-svg" id="jd-icon-svg"></div><span class="jd-step-of" id="jd-step-of">STEP 1 OF 5</span></div>
+      <div class="jd-body" id="jd-body">
+        <p class="jd-tag" id="jd-tag">THE ORIGIN</p>
+        <h3 class="jd-title" id="jd-title">RAW FOSSIL FUELS</h3>
+        <p class="jd-sub" id="jd-sub">Extracted from petroleum &amp; natural gas</p>
+        <p class="jd-desc" id="jd-desc">Plastics begin as crude oil or natural gas. Refineries crack these into ethylene and propylene — the chemical building blocks of every synthetic polymer that will eventually touch your food, skin, and lungs.</p>
+        <div class="jd-stat"><span class="dot"></span><strong id="jd-stat">99% OF PLASTICS ARE DERIVED FROM FOSSIL FUELS</strong></div>
+      </div>
+      <div class="jd-pager">
+        <button class="pager-btn" id="jd-prev" aria-label="Previous step"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 15l6-6 6 6"/></svg></button>
+        <span class="pager-count"><span id="jd-num">1</span><span class="pager-divider">/</span>5</span>
+        <button class="pager-btn" id="jd-next" aria-label="Next step"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── SECTION 04 — SCIENCE ─────────────────────── -->
+  <section class="section science" id="science">
+    <p class="section-label">SECTION 04 — METHODOLOGY</p>
+    <h2 class="section-title">THE SCIENCE OF <span class="cyan">PUREPATH</span></h2>
+    <p class="section-sub">Four stages of AI-driven analysis. One uncompromising goal: molecular-level clarity<br/>about what surrounds you.</p>
+
+    <div class="stats-row">
+      <div class="stat-cell"><span class="stat-num">340+</span><span class="stat-label">POLYMER SIGNATURES</span></div>
+      <div class="stat-cell"><span class="stat-num">2.4M</span><span class="stat-label">TRAINING SAMPLES</span></div>
+      <div class="stat-cell"><span class="stat-num">94.7%</span><span class="stat-label">DETECTION ACCURACY</span></div>
+      <div class="stat-cell"><span class="stat-num">&lt;2s</span><span class="stat-label">SCAN TIME</span></div>
+    </div>
+
+    <div class="science-cards">
+      <article class="sci-card">
+        <span class="sci-num">01</span>
+        <div class="sci-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2 2M17.1 17.1l2 2M4.9 19.1l2-2M17.1 6.9l2-2"/></svg>
+        </div>
+        <h3>SPECTRAL IMAGE CAPTURE</h3>
+        <p>PurePath's camera pipeline captures multi-spectral light signatures beyond the visible range, isolating the unique reflectance patterns emitted by plastic polymer chains embedded in household surfaces.</p>
+      </article>
+
+      <article class="sci-card">
+        <span class="sci-num">02</span>
+        <div class="sci-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="6" cy="6" r="2"/><circle cx="18" cy="6" r="2"/><circle cx="12" cy="12" r="2"/><circle cx="6" cy="18" r="2"/><circle cx="18" cy="18" r="2"/><path d="M8 6l3 5M16 6l-3 5M11 13l-4 4M13 13l4 4"/></svg>
+        </div>
+        <h3>NEURAL PATTERN RECOGNITION</h3>
+        <p>A convolutional neural network trained on 2.4 million labeled microplastic samples cross-references your scan against a library of 340+ known polymer fingerprints — PTFE, BPA, nylon, polyester, and more.</p>
+      </article>
+
+      <article class="sci-card">
+        <span class="sci-num">03</span>
+        <div class="sci-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h12M3 18h8"/><circle cx="19" cy="17" r="3"/><path d="M19 15v2l1 1"/></svg>
+        </div>
+        <h3>RISK STRATIFICATION</h3>
+        <p>Detected compounds are weighted by leaching probability, surface temperature, abrasion state, and your usage frequency to produce a personalised Biological Risk Score for each item in your environment.</p>
+      </article>
+
+      <article class="sci-card">
+        <span class="sci-num">04</span>
+        <div class="sci-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 9h18M9 5V3M15 5V3"/><path d="M7 13h4M7 17h8"/></svg>
+        </div>
+        <h3>DETOX PROTOCOL GENERATION</h3>
+        <p>Results feed directly into PurePath's protocol engine, which generates a ranked, room-by-room replacement plan — prioritising the highest-risk items first and tracking your molecular purity score over time.</p>
+      </article>
+    </div>
+
+    <div class="sci-badge">
+      <span class="sci-badge-dot"></span>
+      PEER-REVIEWED METHODOLOGY · UPDATED MODEL Q1 2026
+    </div>
+  </section>
+
+  <!-- ─── SECTION — MOLECULAR DOSSIER ──────────────── -->
+  <section class="section dossier">
+    <h2 class="section-title">THE MOLECULAR <span class="cyan">DOSSIER</span></h2>
+    <div class="dossier-grid">
+
+      <!-- phone mockup -->
+      <div class="phone-mockup">
+        <div class="phone-frame">
+          <div class="phone-header">
+            <div class="phone-avatar">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><circle cx="9" cy="10" r="1" fill="currentColor"/><circle cx="15" cy="10" r="1" fill="currentColor"/><path d="M8 15c1.5 1.5 6.5 1.5 8 0"/></svg>
+            </div>
+            <span class="phone-title">MOLECULAR DOSSIER</span>
+            <div class="phone-gear">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 11-2.83 2.83l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 11-4 0v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 11-2.83-2.83l.06-.06a1.65 1.65 0 00.33-1.82 1.65 1.65 0 00-1.51-1H3a2 2 0 110-4h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 112.83-2.83l.06.06a1.65 1.65 0 001.82.33H9a1.65 1.65 0 001-1.51V3a2 2 0 114 0v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 112.83 2.83l-.06.06a1.65 1.65 0 00-.33 1.82V9a1.65 1.65 0 001.51 1H21a2 2 0 110 4h-.09a1.65 1.65 0 00-1.51 1z"/></svg>
+            </div>
+          </div>
+
+          <div class="purity-ring">
+            <svg viewBox="0 0 120 120">
+              <circle cx="60" cy="60" r="52" stroke="#0d3a52" stroke-width="6" fill="none"/>
+              <circle cx="60" cy="60" r="52" stroke="#22d3ee" stroke-width="6" fill="none" stroke-linecap="round" stroke-dasharray="326" stroke-dashoffset="120" transform="rotate(-90 60 60)" opacity=".9"/>
+            </svg>
+            <div class="purity-inner">
+              <span class="purity-label">PURITY INDEX</span>
+              <span class="purity-value">%</span>
+              <div class="purity-bars">
+                <span></span>
+                <span></span>
+              </div>
+            </div>
+            <div class="sync-pill"><span class="sync-dot"></span> LIVE MOLECULAR SYNC</div>
+          </div>
+
+          <p class="exposure-label">EXPOSURE MAP</p>
+          <div class="exposure-grid">
+            <div class="exposure-cell">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 12l9-9 9 9-9 9z"/><path d="M9 12h6"/></svg>
+              <span>KITCHEN</span>
+            </div>
+            <div class="exposure-cell">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="8" width="18" height="10" rx="1"/><path d="M3 12h18"/></svg>
+              <span>BEDDING</span>
+            </div>
+            <div class="exposure-cell">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3v3"/><path d="M5 9h14a2 2 0 0 1 2 2v1H3v-1a2 2 0 0 1 2-2z"/><path d="M8 14v.5M12 14v.5M16 14v.5M10 17v.5M14 17v.5M12 20v.5"/></svg>
+              <span>BATHROOM</span>
+            </div>
+          </div>
+
+          <div class="phone-nav">
+            <div class="pn-cell"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 7h18l-2 13H5z"/></svg><span>SHOP</span></div>
+            <div class="pn-cell active"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M7 9h10M7 13h7"/></svg><span>RESULTS</span></div>
+            <div class="pn-camera">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8h4l2-3h6l2 3h4v12H3z"/><circle cx="12" cy="13" r="4"/></svg>
+            </div>
+            <div class="pn-cell"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 4-6 8-6s8 2 8 6"/></svg><span>PROFILE</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- right side -->
+      <div class="dossier-body">
+        <h3 class="dossier-title">BUILD YOUR HOUSEHOLD <span class="cyan">DOSSIER.</span></h3>
+        <p class="dossier-desc">Every scan is logged. Every toxin is tracked. Watch your Molecular Load drop as you swap toxic materials for organic purity. Your home becomes a living dataset — getting cleaner with every audit.</p>
+
+        <div class="dossier-stats">
+          <div class="ds-cell"><span class="ds-num">847</span><span class="ds-lbl">Compounds Tracked</span></div>
+          <div class="ds-cell"><span class="ds-num">3</span><span class="ds-lbl">Rooms Audited</span></div>
+          <div class="ds-cell"><span class="ds-num">94.7%</span><span class="ds-lbl">AI Accuracy</span></div>
+        </div>
+
+        <div class="store-buttons">
+          <a class="store-btn">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 12.6c0-2.7 2.2-4 2.3-4.1-1.3-1.8-3.2-2.1-3.9-2.1-1.7-.2-3.2 1-4.1 1-.9 0-2.2-1-3.6-.9-1.9 0-3.6 1.1-4.5 2.7-1.9 3.3-.5 8.2 1.4 10.9.9 1.3 2 2.8 3.4 2.8s1.9-.9 3.6-.9 2.2.9 3.6.9 2.5-1.3 3.4-2.7c1.1-1.5 1.5-3 1.5-3.1-.1-.1-3-1.1-3-4.5zM14.7 4.7c.8-.9 1.3-2.2 1.1-3.4-1.1.1-2.4.7-3.2 1.7-.7.8-1.4 2.1-1.2 3.3 1.3.1 2.5-.7 3.3-1.6z"/></svg>
+            <div>
+              <span class="store-top">Download on the</span>
+              <span class="store-bottom">App Store</span>
+            </div>
+            <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+          </a>
+          <a class="store-btn">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 12c.3 0 .5-.2.5-.5 0-1.4-.6-2.6-1.5-3.5-.4-.4-1-.4-1.4 0L12 11l-3-3c-.4-.4-1-.4-1.4 0C6.5 9 6 10.2 6 11.5c0 .3.2.5.5.5h11zM12 22c4.4 0 8-3.6 8-8H4c0 4.4 3.6 8 8 8zM8 4c0-.6.4-1 1-1s1 .4 1 1-.4 1-1 1-1-.4-1-1zm6 0c0-.6.4-1 1-1s1 .4 1 1-.4 1-1 1-1-.4-1-1z"/></svg>
+            <div>
+              <span class="store-top">Get it on</span>
+              <span class="store-bottom">Google Play</span>
+            </div>
+            <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── SECTION 05 — TESTIMONIALS ────────────────── -->
+  <section class="section testimonials">
+    <p class="section-label">SECTION 05 — TESTIMONIALS</p>
+    <h2 class="section-title">WHAT OUR <span class="cyan">USERS SAY</span></h2>
+    <p class="section-sub">Early beta testers from around the world — real results, real<br/>households.</p>
+
+    <div class="testimonial-grid">
+      <article class="t-card">
+        <div class="t-head"><span class="t-stars">★★★★★</span><span class="t-tag">KITCHEN AUDIT</span></div>
+        <p class="t-quote">"I scanned my kitchen and was shocked — my non-stick pans flagged CRITICAL risk. Swapped them out within a week. My PurePath score has climbed 18 points since. This app genuinely changed how I cook."</p>
+        <div class="t-author"><div class="t-avatar">ML</div><div><strong>Mara L.</strong><span>San Francisco, CA</span></div></div>
+      </article>
+
+      <article class="t-card">
+        <div class="t-head"><span class="t-stars">★★★★★</span><span class="t-tag">BEDROOM AUDIT</span></div>
+        <p class="t-quote">"As someone deep into biohacking, PurePath filled a gap nothing else could. The polymer fingerprint library is insane — it caught formaldehyde off-gassing in my memory foam mattress I never would have known about."</p>
+        <div class="t-author"><div class="t-avatar">JW</div><div><strong>James W.</strong><span>Austin, TX</span></div></div>
+      </article>
+
+      <article class="t-card">
+        <div class="t-head"><span class="t-stars">★★★★★</span><span class="t-tag">FULL HOME PROTOCOL</span></div>
+        <p class="t-quote">"The detox protocol it generated was practical, not overwhelming. Step-by-step, room by room. Three months in and my household's molecular purity score is up 34%. My family is sleeping better, genuinely."</p>
+        <div class="t-author"><div class="t-avatar">PS</div><div><strong>Priya S.</strong><span>London, UK</span></div></div>
+      </article>
+
+      <article class="t-card">
+        <div class="t-head"><span class="t-stars">★★★★★</span><span class="t-tag">SCIENCE VERIFIED</span></div>
+        <p class="t-quote">"I was skeptical — I'm a biochemist. But the spectral methodology is sound and the neural model's accuracy on known polymers is impressive. I've recommended it to colleagues running indoor-air studies."</p>
+        <div class="t-author"><div class="t-avatar">DR</div><div><strong>Dr. Rian K.</strong><span>Berlin, DE</span></div></div>
+      </article>
+
+      <article class="t-card">
+        <div class="t-head"><span class="t-stars">★★★★★</span><span class="t-tag">BETA TESTER</span></div>
+        <p class="t-quote">"Downloaded it as a beta tester and never looked back. The UI is gorgeous, the scans are fast, and the risk breakdowns are clear enough that I could explain them to my kids — who now ask if the cutting board is 'PurePath approved.'"</p>
+        <div class="t-author"><div class="t-avatar">AT</div><div><strong>Alex T.</strong><span>Brooklyn, NY</span></div></div>
+      </article>
+
+      <article class="t-card">
+        <div class="t-head"><span class="t-stars">★★★★★</span><span class="t-tag">FAMILY HEALTH</span></div>
+        <p class="t-quote">"After my son's eczema flared, I scanned his room. PurePath flagged the polyester sheets and a 'fragrance' diffuser as primary irritants. Two weeks after switching to organic cotton and removing the diffuser — clear skin."</p>
+        <div class="t-author"><div class="t-avatar">EM</div><div><strong>Elena M.</strong><span>Madrid, ES</span></div></div>
+      </article>
+    </div>
+  </section>
+
+  <!-- ─── FINAL CTA ────────────────────────────────── -->
+  <section class="section final-cta" id="download">
+    <p class="section-label">THE FINAL PROTOCOL</p>
+    <h2 class="final-title">
+      BIOLOGICAL PURITY<br/>
+      <span class="cyan glow">IS A CHOICE.</span>
+    </h2>
+    <p class="final-sub">The contamination in your home is systematic. So is the solution.<br/>Join thousands of households building molecular-level awareness<br/>— one room at a time.</p>
+
+    <a href="#" class="download-auditor">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12M6 11l6 6 6-6M5 21h14"/></svg>
+      DOWNLOAD THE AUDITOR
+    </a>
+
+    <div class="store-buttons centered">
+      <a class="store-btn">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 12.6c0-2.7 2.2-4 2.3-4.1-1.3-1.8-3.2-2.1-3.9-2.1-1.7-.2-3.2 1-4.1 1-.9 0-2.2-1-3.6-.9-1.9 0-3.6 1.1-4.5 2.7-1.9 3.3-.5 8.2 1.4 10.9.9 1.3 2 2.8 3.4 2.8s1.9-.9 3.6-.9 2.2.9 3.6.9 2.5-1.3 3.4-2.7c1.1-1.5 1.5-3 1.5-3.1-.1-.1-3-1.1-3-4.5zM14.7 4.7c.8-.9 1.3-2.2 1.1-3.4-1.1.1-2.4.7-3.2 1.7-.7.8-1.4 2.1-1.2 3.3 1.3.1 2.5-.7 3.3-1.6z"/></svg>
+        <div><span class="store-top">Download on the</span><span class="store-bottom">App Store</span></div>
+        <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+      </a>
+      <a class="store-btn">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 12c.3 0 .5-.2.5-.5 0-1.4-.6-2.6-1.5-3.5-.4-.4-1-.4-1.4 0L12 11l-3-3c-.4-.4-1-.4-1.4 0C6.5 9 6 10.2 6 11.5c0 .3.2.5.5.5h11zM12 22c4.4 0 8-3.6 8-8H4c0 4.4 3.6 8 8 8z"/></svg>
+        <div><span class="store-top">Get it on</span><span class="store-bottom">Google Play</span></div>
+        <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+  </section>
+
+  <!-- ─── FOOTER ──────────────────────────────────── -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="brand">
+        <span class="brand-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg>
+        </span>
+        <span class="brand-name">Pure<span class="brand-accent">Path</span></span>
+      </div>
+      <div class="footer-links">
+        <a href="privacy-policy.html">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+      </div>
+      <p class="copyright">© 2026 PurePath. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="app.js?v=2"></script>
+</body>
+</html>

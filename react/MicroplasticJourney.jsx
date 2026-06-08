@@ -1,0 +1,278 @@
+import { useState, useEffect, useRef, useCallback } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import "./MicroplasticJourney.css";
+
+/* ── Inline icon set ── kept here so the component is fully self-contained ── */
+const Icons = {
+  fuel: (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7">
+      <circle cx="12" cy="12" r="9" />
+      <path d="M12 3v18M3 12h18M5.6 5.6l12.8 12.8M5.6 18.4L18.4 5.6" />
+    </svg>
+  ),
+  factory: (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7">
+      <rect x="3" y="5" width="18" height="16" rx="2" />
+      <path d="M3 9h18M8 3v4M16 3v4" />
+    </svg>
+  ),
+  bag: (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7">
+      <path d="M5 8h14l-1.5 12H6.5z" />
+      <path d="M9 8V5a3 3 0 0 1 6 0v3" />
+    </svg>
+  ),
+  shield: (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7">
+      <path d="M12 3l8 4v6c0 5-4 8-8 8s-8-3-8-8V7l8-4z" />
+    </svg>
+  ),
+  body: (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7">
+      <circle cx="12" cy="12" r="9" />
+      <circle cx="9" cy="10" r="1" fill="currentColor" />
+      <circle cx="15" cy="10" r="1" fill="currentColor" />
+      <path d="M8 15c1.5 1.5 6.5 1.5 8 0" />
+    </svg>
+  ),
+  chevronUp: (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+      <path d="M6 15l6-6 6 6" />
+    </svg>
+  ),
+  chevronDown: (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+      <path d="M6 9l6 6 6-6" />
+    </svg>
+  ),
+};
+
+/* ── Default data — pass `steps` prop to override ── */
+const defaultSteps = [
+  {
+    id: 1,
+    label: "Step 1",
+    title: "Raw Fossil Fuels",
+    subtitle: "Extracted from petroleum & natural gas",
+    category: "The Origin",
+    description:
+      "Plastics begin as crude oil or natural gas. Refineries crack these into ethylene and propylene — the chemical building blocks of every synthetic polymer that will eventually touch your food, skin, and lungs.",
+    stat: "99% of plastics are derived from fossil fuels",
+    icon: Icons.fuel,
+    accent: "#ff8a4c",
+  },
+  {
+    id: 2,
+    label: "Step 2",
+    title: "Industrial Manufacturing",
+    subtitle: "Polymerized into consumer-grade plastics",
+    category: "Mass Production",
+    description:
+      "Refined hydrocarbons are polymerized into PET, PVC, PTFE and a hundred other resins. Additives — plasticizers, flame retardants, stabilizers — bind to those chains and leach out for the rest of the product's life.",
+    stat: "430M tonnes of plastic manufactured each year",
+    icon: Icons.factory,
+    accent: "#22d3ee",
+  },
+  {
+    id: 3,
+    label: "Step 3",
+    title: "Consumer Products",
+    subtitle: "Embedded in everything you touch daily",
+    category: "In Your Home",
+    description:
+      "Cookware, packaging, textiles, furniture, personal care — synthetic polymers infiltrate every category of household goods. Heat, friction and time all accelerate the release of microscopic fragments.",
+    stat: "Average home contains 7,000+ plastic items",
+    icon: Icons.bag,
+    accent: "#22d3ee",
+  },
+  {
+    id: 4,
+    label: "Step 4",
+    title: "Fragmentation",
+    subtitle: "Plastics shed into invisible particles",
+    category: "Breaking Down",
+    description:
+      "UV light, abrasion and washing break macroplastics into micro- and nano-particles. These fragments are small enough to float in air, contaminate water, and absorb into food — undetectable without instrumentation.",
+    stat: "10⁹ microplastic particles in 1L of bottled water",
+    icon: Icons.shield,
+    accent: "#22d3ee",
+  },
+  {
+    id: 5,
+    label: "Step 5",
+    title: "Human Ingestion",
+    subtitle: "Entering the body through food, water & air",
+    category: "Inside You",
+    description:
+      "We ingest microplastics through contaminated tap water, food cooked in degraded cookware, inhaled laundry vapours, and even the air inside our homes. Nano-plastics can cross the blood-brain barrier.",
+    stat: "1.2 credit cards worth of plastic ingested per week",
+    icon: Icons.body,
+    accent: "#ff4d8d",
+  },
+];
+
+const AUTO_CYCLE_MS = 3500;
+
+export default function MicroplasticJourney({
+  steps = defaultSteps,
+  autoCycleMs = AUTO_CYCLE_MS,
+  sectionLabel = "Section 06 — The Journey",
+  heading = "The Microplastic",
+  headingAccent = "Journey",
+  description = "From oil wells to your bloodstream — five steps that explain why contamination is unavoidable without awareness.",
+  hint = "Tap any step to explore",
+}) {
+  const [activeIdx, setActiveIdx] = useState(0);
+  const intervalRef = useRef(null);
+
+  const startCycle = useCallback(() => {
+    clearInterval(intervalRef.current);
+    intervalRef.current = setInterval(() => {
+      setActiveIdx((i) => (i + 1) % steps.length);
+    }, autoCycleMs);
+  }, [steps.length, autoCycleMs]);
+
+  useEffect(() => {
+    startCycle();
+    return () => clearInterval(intervalRef.current);
+  }, [startCycle]);
+
+  const select = (idx) => {
+    setActiveIdx(idx);
+    startCycle();
+  };
+
+  const next = () => select((activeIdx + 1) % steps.length);
+  const prev = () => select((activeIdx - 1 + steps.length) % steps.length);
+
+  const active = steps[activeIdx];
+
+  return (
+    <section className="mj-section" style={{ "--accent": active.accent }}>
+      <div className="mj-inner">
+        <p className="mj-section-label">{sectionLabel}</p>
+        <h2 className="mj-title">
+          {heading}{" "}
+          <span className="mj-title-accent">{headingAccent}</span>
+        </h2>
+        <p className="mj-description">{description}</p>
+        <p className="mj-hint">{hint}</p>
+
+        {/* ── timeline ── */}
+        <div className="mj-timeline" role="tablist">
+          {steps.map((step, idx) => {
+            const isActive = idx === activeIdx;
+            return (
+              <div className="mj-timeline-cell" key={step.id}>
+                <button
+                  type="button"
+                  role="tab"
+                  aria-selected={isActive}
+                  aria-label={`${step.label}: ${step.title}`}
+                  className={`mj-step ${isActive ? "is-active" : ""}`}
+                  onClick={() => select(idx)}
+                  style={{ "--step-accent": step.accent }}
+                >
+                  <motion.span
+                    className="mj-step-icon"
+                    initial={false}
+                    animate={{
+                      scale: isActive ? 1.12 : 1,
+                      opacity: isActive ? 1 : 0.5,
+                      boxShadow: isActive
+                        ? `0 0 32px ${step.accent}55, inset 0 0 18px ${step.accent}33`
+                        : "0 0 0 transparent",
+                    }}
+                    transition={{ type: "spring", stiffness: 240, damping: 22 }}
+                  >
+                    {step.icon}
+                  </motion.span>
+
+                  <motion.div
+                    className="mj-step-meta"
+                    initial={false}
+                    animate={{ opacity: isActive ? 1 : 0.55 }}
+                    transition={{ duration: 0.25 }}
+                  >
+                    <span className="mj-step-num">{step.label}</span>
+                    <span className="mj-step-title">{step.title}</span>
+                    <span className="mj-step-sub">{step.category}</span>
+                  </motion.div>
+                </button>
+
+                {idx < steps.length - 1 && (
+                  <span className="mj-arrow" aria-hidden="true">
+                    - - - &gt;
+                  </span>
+                )}
+              </div>
+            );
+          })}
+        </div>
+
+        {/* ── detail card ── */}
+        <div className="mj-card">
+          <div className="mj-card-icon">
+            <motion.span
+              className="mj-card-icon-box"
+              initial={false}
+              animate={{
+                boxShadow: `0 0 32px ${active.accent}40, inset 0 0 24px ${active.accent}22`,
+              }}
+            >
+              {active.icon}
+            </motion.span>
+            <span className="mj-card-stepof">
+              Step {active.id} of {steps.length}
+            </span>
+          </div>
+
+          <div className="mj-card-body">
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={active.id}
+                initial={{ opacity: 0, y: 16 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -12 }}
+                transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
+              >
+                <p className="mj-card-category">{active.category}</p>
+                <h3 className="mj-card-title">{active.title}</h3>
+                <p className="mj-card-subtitle">{active.subtitle}</p>
+                <p className="mj-card-desc">{active.description}</p>
+                <div className="mj-card-stat">
+                  <span className="mj-stat-dot" />
+                  <strong>{active.stat}</strong>
+                </div>
+              </motion.div>
+            </AnimatePresence>
+          </div>
+
+          <div className="mj-card-pager">
+            <button
+              type="button"
+              onClick={prev}
+              aria-label="Previous step"
+              className="mj-pager-btn"
+            >
+              {Icons.chevronUp}
+            </button>
+            <span className="mj-pager-count">
+              {active.id}
+              <span className="mj-pager-slash">/</span>
+              {steps.length}
+            </span>
+            <button
+              type="button"
+              onClick={next}
+              aria-label="Next step"
+              className="mj-pager-btn"
+            >
+              {Icons.chevronDown}
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}

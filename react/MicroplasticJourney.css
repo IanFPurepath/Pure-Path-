@@ -1,0 +1,352 @@
+/* MicroplasticJourney — self-contained styles.
+   --accent is set inline per active step (set on the <section>).
+   --step-accent is set per-step on each button. */
+
+.mj-section {
+  --bg-0:        #020a13;
+  --bg-card:     rgba(8, 24, 38, 0.55);
+  --border:      rgba(34, 211, 238, 0.18);
+  --border-soft: rgba(34, 211, 238, 0.10);
+  --cyan:        #22d3ee;
+  --cyan-bright: #4ee9ff;
+  --text:        #d7e6ec;
+  --text-dim:    #6e8898;
+  --text-faint:  #44606e;
+  --white:       #ffffff;
+  --accent:      #22d3ee;
+
+  position: relative;
+  padding: 6rem 1.5rem;
+  background: var(--bg-0);
+  color: var(--text);
+  font-family: 'Inter', system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  overflow: hidden;
+}
+
+.mj-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 60% 50% at 50% 30%, rgba(34, 211, 238, 0.06), transparent 70%),
+    radial-gradient(ellipse 40% 30% at 50% 80%, var(--accent) 0%, transparent 70%);
+  opacity: 0.4;
+  pointer-events: none;
+  transition: background 0.6s ease;
+}
+
+.mj-inner {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* ── Headers ── */
+.mj-section-label {
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.3em;
+  color: var(--cyan);
+  text-transform: uppercase;
+  margin-bottom: 1.25rem;
+}
+
+.mj-title {
+  font-size: clamp(2.25rem, 6vw, 4.25rem);
+  font-weight: 900;
+  letter-spacing: -0.02em;
+  line-height: 1.05;
+  color: var(--white);
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+}
+
+.mj-title-accent {
+  color: var(--cyan-bright);
+  text-shadow: 0 0 28px rgba(34, 211, 238, 0.35);
+}
+
+.mj-description {
+  font-size: 1rem;
+  color: var(--text-dim);
+  max-width: 600px;
+  margin: 0 auto 1rem;
+  line-height: 1.7;
+}
+
+.mj-hint {
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  color: var(--cyan);
+  margin-bottom: 3.5rem;
+  text-transform: capitalize;
+}
+
+/* ── Timeline ── */
+.mj-timeline {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 0.25rem;
+  margin-bottom: 3rem;
+  flex-wrap: wrap;
+}
+
+.mj-timeline-cell {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+}
+
+.mj-step {
+  flex: 0 0 150px;
+  background: transparent;
+  border: none;
+  padding: 0.5rem;
+  cursor: pointer;
+  color: inherit;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: inherit;
+  transition: transform 0.2s ease;
+}
+
+.mj-step:hover { transform: translateY(-2px); }
+.mj-step:focus-visible { outline: 2px solid var(--cyan); outline-offset: 4px; border-radius: 12px; }
+
+.mj-step-icon {
+  width: 68px;
+  height: 68px;
+  border-radius: 50%;
+  border: 1.5px solid var(--step-accent, var(--cyan));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--step-accent, var(--cyan));
+  background: rgba(34, 211, 238, 0.03);
+  margin-bottom: 0.9rem;
+}
+
+.mj-step-icon svg { width: 26px; height: 26px; }
+
+.mj-step-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.mj-step-num {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  color: var(--step-accent, var(--cyan));
+  text-transform: uppercase;
+}
+
+.mj-step-title {
+  font-size: 0.82rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  color: var(--white);
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+.mj-step-sub {
+  font-size: 0.75rem;
+  color: var(--text-dim);
+}
+
+.mj-arrow {
+  align-self: center;
+  margin-top: 28px;
+  color: rgba(34, 211, 238, 0.25);
+  font-family: 'JetBrains Mono', ui-monospace, monospace;
+  font-size: 0.8rem;
+  letter-spacing: -0.05em;
+  user-select: none;
+}
+
+/* ── Detail card (glassmorphism) ── */
+.mj-card {
+  display: grid;
+  grid-template-columns: 110px 1fr 90px;
+  align-items: center;
+  gap: 2rem;
+  background: var(--bg-card);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid var(--border-soft);
+  border-radius: 18px;
+  padding: 2.5rem;
+  text-align: left;
+  box-shadow:
+    0 30px 60px -30px rgba(0, 0, 0, 0.6),
+    inset 0 0 60px -30px rgba(34, 211, 238, 0.12);
+  position: relative;
+}
+
+.mj-card-icon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.65rem;
+}
+
+.mj-card-icon-box {
+  width: 88px;
+  height: 88px;
+  border-radius: 14px;
+  border: 1.5px solid var(--accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--accent);
+  background: rgba(255, 255, 255, 0.02);
+  transition: border-color 0.4s ease, color 0.4s ease;
+}
+
+.mj-card-icon-box svg { width: 34px; height: 34px; }
+
+.mj-card-stepof {
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  color: var(--accent);
+  text-transform: uppercase;
+  padding: 0.2rem 0.6rem;
+  border: 1px solid color-mix(in srgb, var(--accent) 50%, transparent);
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--accent) 8%, transparent);
+  white-space: nowrap;
+}
+
+.mj-card-body { padding: 0 0.5rem; min-height: 220px; }
+
+.mj-card-category {
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.25em;
+  color: var(--accent);
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+}
+
+.mj-card-title {
+  font-size: clamp(1.5rem, 3vw, 2.1rem);
+  font-weight: 900;
+  letter-spacing: 0.02em;
+  color: var(--white);
+  margin: 0 0 0.35rem;
+  text-transform: uppercase;
+}
+
+.mj-card-subtitle {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--cyan-bright);
+  margin-bottom: 1rem;
+}
+
+.mj-card-desc {
+  font-size: 0.95rem;
+  color: var(--text-dim);
+  line-height: 1.7;
+  margin-bottom: 1.25rem;
+}
+
+.mj-card-stat {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  padding: 0.75rem 1.25rem;
+  border: 1px solid color-mix(in srgb, var(--accent) 35%, transparent);
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--accent) 6%, transparent);
+}
+
+.mj-card-stat strong {
+  color: var(--accent);
+  font-weight: 700;
+  font-size: 0.85rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.mj-stat-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 8px var(--accent);
+}
+
+/* ── Pager ── */
+.mj-card-pager {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.mj-pager-btn {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--cyan);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s, border-color 0.2s;
+}
+
+.mj-pager-btn:hover {
+  background: rgba(34, 211, 238, 0.08);
+  border-color: var(--cyan);
+}
+
+.mj-pager-btn svg { width: 18px; height: 18px; }
+
+.mj-pager-count {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--cyan);
+  letter-spacing: 0.05em;
+}
+
+.mj-pager-slash {
+  color: var(--text-faint);
+  margin: 0 0.2rem;
+}
+
+/* ── Responsive ── */
+@media (max-width: 960px) {
+  .mj-section { padding: 4rem 1rem; }
+  .mj-timeline { gap: 0; }
+  .mj-step { flex: 0 0 120px; }
+  .mj-arrow { display: none; }
+  .mj-card {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    padding: 2rem 1.5rem;
+    text-align: center;
+  }
+  .mj-card-body { padding: 0; }
+  .mj-card-pager { flex-direction: row; }
+  .mj-card-stat { margin: 0 auto; }
+}
+
+@media (max-width: 480px) {
+  .mj-step { flex: 0 0 95px; }
+  .mj-step-icon { width: 56px; height: 56px; }
+  .mj-step-icon svg { width: 22px; height: 22px; }
+  .mj-step-title { font-size: 0.72rem; }
+}
