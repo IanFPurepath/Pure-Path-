@@ -1375,8 +1375,6 @@ img { max-width: 100%; display: block; }
   .pill-ml, .pill-mr { display: none; }
   .pill-bl { top: auto; bottom: 18%; left: 4%; }
   .pill-br { top: auto; bottom: 18%; right: 4%; }
-}
-@media (max-width: 960px) {
   .dossier-grid { grid-template-columns: 1fr; gap: 2.5rem; }
   .journey-detail { grid-template-columns: 1fr; text-align: center; }
   .jd-icon { margin: 0 auto; }
@@ -1388,10 +1386,183 @@ img { max-width: 100%; display: block; }
   .testimonial-grid { grid-template-columns: 1fr; }
   .dossier-stats { grid-template-columns: 1fr; }
 }
+
 @media (max-width: 640px) {
   .floating-pills .pill { display: none; }
-  .disc { padding: 2rem; }
+  .disc { padding: 2rem; width: 100%; }
   .cta-button { padding: 1rem 2.5rem; font-size: .85rem; }
   .footer-inner { flex-direction: column; text-align: center; }
   .download-auditor { padding: 1rem 1.5rem; font-size: .85rem; letter-spacing: .12em; }
+  .section { padding: 3rem 1rem; }
+  .hero { padding: 2rem 1rem 3rem; height: auto; }
+  .kicker { font-size: .75rem; }
+  .mega { font-size: clamp(4rem, 12vw, 8rem); }
+  .kicker-lg { font-size: .85rem; }
+  .hero-sub { font-size: .75rem; }
+  .section-title { font-size: clamp(1.8rem, 5vw, 2.5rem); }
+  .section-sub { font-size: .9rem; }
+  .stats-row { grid-template-columns: 1fr; gap: .5rem; padding: 1.5rem; }
+  .stat-cell { padding: .75rem 0; }
+  .stat-num { font-size: 1.8rem; }
+  .stat-label { font-size: .65rem; }
+  .science-cards { gap: 1rem; }
+  .sci-card { padding: 1.75rem 1.25rem 1.75rem 3rem; }
+  .sci-icon { top: 1.25rem; left: 1rem; }
+  .sci-card h3 { font-size: .95rem; padding-left: 2.5rem; min-height: auto; }
+  .sci-card p { font-size: .85rem; }
+  .phone-mockup { max-width: 280px; }
+  .phone-frame { width: 280px; padding: 1rem; }
+  .dossier-title { font-size: 1.5rem; }
+  .dossier-desc { font-size: .9rem; }
+  .ds-num { font-size: 1.4rem; }
+  .ds-lbl { font-size: .65rem; }
+  .store-btn { min-width: 160px; padding: .7rem 1rem; font-size: .85rem; }
+  .store-top { font-size: .6rem; }
+  .store-bottom { font-size: .8rem; }
+  .t-quote { font-size: .85rem; }
+  .final-title { font-size: clamp(1.75rem, 5vw, 2.5rem); margin: 1rem 0 1.5rem; }
+  .final-sub { font-size: .95rem; margin-bottom: 1.5rem; }
+}
+
+@media (max-width: 480px) {
+  body { font-size: 14px; }
+  .nav { padding: 1rem 1rem; gap: 0.5rem; }
+  .nav-links { display: none; }
+  .btn-outline { padding: .6rem 1.25rem; font-size: .7rem; }
+  .hero { padding: 1.5rem 1rem 2.5rem; }
+  .disc { padding: 1.5rem; max-width: calc(100vw - 2rem); }
+  .mega { font-size: clamp(3rem, 10vw, 6rem); margin-bottom: .75rem; }
+  .kicker { font-size: .7rem; margin-bottom: .75rem; }
+  .kicker-lg { font-size: .75rem; line-height: 1.3; margin-bottom: 1rem; }
+  .hero-sub { font-size: .7rem; max-width: 100%; }
+  .cta-button { padding: .85rem 1.5rem; font-size: .75rem; }
+  .hero-trust { font-size: .65rem; margin-top: .5rem; }
+  .section { padding: 2.5rem 1rem; }
+  .section-label { font-size: .7rem; margin-bottom: 1rem; }
+  .section-title { font-size: clamp(1.5rem, 5vw, 2rem); margin-bottom: .75rem; }
+  .section-sub { font-size: .8rem; max-width: 100%; margin-bottom: 2rem; }
+  .journey-hint { margin-top: -1.5rem; margin-bottom: 2rem; font-size: .75rem; }
+  .journey-steps { gap: .15rem; margin-bottom: 2rem; }
+  .jstep { flex: 0 0 80px; padding: .3rem; }
+  .jstep-icon { width: 50px; height: 50px; margin-bottom: .6rem; }
+  .jstep-icon svg { width: 20px; height: 20px; }
+  .jstep-num { font-size: .6rem; }
+  .jstep-title { font-size: .65rem; }
+  .jstep-sub { font-size: .65rem; }
+  .journey-detail { padding: 1.5rem 1rem; gap: 1rem; }
+  .jd-icon { width: 70px; height: 70px; }
+  .jd-icon-svg svg { width: 28px; height: 28px; }
+  .jd-step-of { font-size: .55rem; padding: .15rem .5rem; }
+  .jd-body { padding-left: 0; }
+  .jd-tag { font-size: .7rem; margin-bottom: .3rem; }
+  .jd-title { font-size: 1.3rem; margin-bottom: .25rem; }
+  .jd-sub { font-size: .85rem; }
+  .jd-desc { font-size: .8rem; margin-bottom: 1rem; }
+  .jd-stat { padding: .6rem 1rem; font-size: .75rem; }
+  .pager-btn { width: 32px; height: 32px; }
+  .pager-btn svg { width: 16px; height: 16px; }
+  .pager-count { font-size: .75rem; }
+  .stats-row { grid-template-columns: 1fr; gap: .5rem; padding: 1rem; }
+  .stat-num { font-size: 1.5rem; margin-bottom: .25rem; }
+  .stat-label { font-size: .6rem; }
+  .sci-card { padding: 1.5rem 1rem 1.5rem 2.5rem; margin-bottom: .75rem; }
+  .sci-num { font-size: .85rem; bottom: 1rem; left: 1rem; }
+  .sci-icon { width: 36px; height: 36px; top: 1.5rem; left: 1rem; }
+  .sci-icon svg { width: 18px; height: 18px; }
+  .sci-card h3 { font-size: .85rem; padding-left: 2rem; margin-bottom: .6rem; }
+  .sci-card p { font-size: .75rem; }
+  .sci-badge { margin-top: 1rem; padding: .5rem 1rem; font-size: .65rem; }
+  .sci-badge-dot { width: 6px; height: 6px; }
+  .room-card { margin-bottom: 1rem; }
+  .room-img { min-height: 150px; }
+  .room-tag { top: 1rem; left: 1rem; font-size: .65rem; padding: .25rem .6rem; }
+  .room-body { padding: 1.5rem 1.25rem; }
+  .room-head { gap: .75rem; }
+  .room-icon { width: 36px; height: 36px; }
+  .room-icon svg { width: 18px; height: 18px; }
+  .room-head h3 { font-size: 1rem; }
+  .risk-badge { padding: .3rem .75rem; font-size: .6rem; }
+  .room-tagline { font-size: .9rem; }
+  .room-desc { font-size: .8rem; }
+  .room-tags { gap: .4rem; }
+  .tag { padding: .2rem .5rem; font-size: .6rem; }
+  .vision-grid { gap: 1rem; }
+  .vision-image { aspect-ratio: 1; }
+  .overlay-tag { top: 20%; left: 18%; padding: .3rem .6rem; font-size: .6rem; }
+  .circle { border-width: 1.5px; }
+  .c1 { width: 60px; height: 60px; top: 28%; left: 20%; }
+  .c2 { width: 45px; height: 45px; top: 55%; left: 40%; }
+  .c3 { width: 40px; height: 40px; top: 50%; left: 55%; }
+  .image-caption { padding: .75rem 1rem; font-size: .65rem; }
+  .ai-panel { padding: 1.5rem 1.25rem; }
+  .panel-label { font-size: .65rem; margin-bottom: .5rem; }
+  .panel-title { font-size: 1.2rem; margin-bottom: .75rem; }
+  .panel-status { font-size: .7rem; gap: .4rem; margin-bottom: 1rem; }
+  .status-dot { width: 6px; height: 6px; }
+  .trigger-list { gap: .75rem; }
+  .trigger-list li { gap: .75rem; padding-bottom: .75rem; }
+  .dot { width: 8px; height: 8px; }
+  .trig-info strong { font-size: .85rem; }
+  .trig-info span { font-size: .65rem; }
+  .bar { width: 80px; }
+  .dossier-grid { gap: 1.5rem; }
+  .phone-mockup { max-width: 100%; }
+  .phone-frame { width: 100%; max-width: 300px; margin: 0 auto; }
+  .purity-ring { width: 150px; height: 150px; margin-bottom: 1rem; }
+  .purity-label { font-size: .6rem; }
+  .purity-value { font-size: 1.5rem; }
+  .purity-bars span { width: 20px; height: 5px; }
+  .sync-pill { font-size: .55rem; padding: .25rem .65rem; }
+  .sync-dot { width: 5px; height: 5px; }
+  .exposure-label { font-size: .65rem; margin: 1rem 0 .75rem; }
+  .exposure-grid { gap: .3rem; }
+  .exposure-cell { padding: .75rem .3rem; font-size: .55rem; }
+  .exposure-cell svg { width: 18px; height: 18px; }
+  .phone-header { gap: .5rem; margin-bottom: 1rem; }
+  .phone-avatar { width: 30px; height: 30px; }
+  .phone-avatar svg { width: 16px; height: 16px; }
+  .phone-title { font-size: .65rem; }
+  .phone-gear { width: 20px; height: 20px; }
+  .phone-nav { padding-top: .75rem; }
+  .pn-cell { gap: .2rem; font-size: .5rem; }
+  .pn-cell svg { width: 16px; height: 16px; }
+  .pn-camera { width: 44px; height: 44px; margin-top: -18px; }
+  .pn-camera svg { width: 20px; height: 20px; }
+  .dossier-title { font-size: 1.25rem; margin-bottom: 1rem; }
+  .dossier-desc { font-size: .8rem; line-height: 1.6; margin-bottom: 1.5rem; }
+  .dossier-stats { gap: .5rem; margin-bottom: 1.5rem; }
+  .ds-cell { padding: 1rem; }
+  .ds-num { font-size: 1.2rem; margin-bottom: .2rem; }
+  .ds-lbl { font-size: .6rem; }
+  .store-buttons { gap: .75rem; }
+  .store-btn { flex-direction: column; min-width: 140px; gap: .6rem; padding: .6rem 1rem; }
+  .store-btn > svg:first-child { width: 20px; height: 20px; }
+  .store-top { font-size: .55rem; }
+  .store-bottom { font-size: .7rem; }
+  .store-btn .arrow { width: 14px; height: 14px; }
+  .testimonial-grid { gap: 1rem; }
+  .t-card { padding: 1.25rem; }
+  .t-head { margin-bottom: .75rem; }
+  .t-stars { font-size: .85rem; }
+  .t-tag { font-size: .6rem; padding: .2rem .5rem; }
+  .t-quote { font-size: .8rem; margin-bottom: 1rem; line-height: 1.6; }
+  .t-author { gap: .5rem; }
+  .t-avatar { width: 32px; height: 32px; font-size: .7rem; }
+  .t-author strong { font-size: .8rem; }
+  .t-author span { font-size: .7rem; }
+  .final-cta { padding-top: 3rem; padding-bottom: 4rem; }
+  .final-title { margin: .75rem 0 1rem; }
+  .final-sub { font-size: .85rem; max-width: 100%; margin-bottom: 1.5rem; }
+  .download-auditor { padding: .75rem 1.25rem; font-size: .7rem; gap: .6rem; margin-bottom: 1.5rem; }
+  .download-auditor svg { width: 16px; height: 16px; }
+  .footer { padding: 2rem 1rem 1rem; }
+  .footer-inner { gap: 1rem; }
+  .copyright { font-size: .7rem; }
+  .policy-hero h1 { font-size: 1.75rem; }
+  .policy-hero p { font-size: .8rem; }
+  .policy-body { padding: 1.5rem 1rem 3rem; }
+  .policy-body h2 { font-size: 1rem; margin: 1.75rem 0 .5rem; }
+  .policy-body h3 { font-size: .9rem; margin: 1rem 0 .4rem; }
+  .policy-body p { font-size: .85rem; }
+  .policy-body ul { font-size: .85rem; margin-left: 1.25rem; }
 }
