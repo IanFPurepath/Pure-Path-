@@ -1388,7 +1388,7 @@ img { max-width: 100%; display: block; }
 }
 
 @media (max-width: 640px) {
-  .floating-pills .pill { display: none; }
+  .floating-pills .pill { display: inline-flex; }
   .disc { padding: 2rem; width: 100%; }
   .cta-button { padding: 1rem 2.5rem; font-size: .85rem; }
   .footer-inner { flex-direction: column; text-align: center; }
