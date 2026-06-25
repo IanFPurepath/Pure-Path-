@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Terms of Service | PurePath</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:        #0a0a0a;
+      --surface:   #111111;
+      --border:    #1e1e1e;
+      --cyan:      #00e5ff;
+      --cyan-dim:  rgba(0, 229, 255, 0.12);
+      --text:      #e8e8e8;
+      --muted:     #888;
+      --heading:   #ffffff;
+      --nav-h:     64px;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-size: 15px;
+      line-height: 1.75;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── NAV ──────────────────────────────────────────── */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      height: var(--nav-h);
+      background: rgba(10,10,10,0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 32px;
+    }
+
+    .nav-logo {
+      font-size: 18px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      color: var(--heading);
+      text-decoration: none;
+      text-transform: uppercase;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active { color: var(--heading); }
+
+    .nav-cta {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      padding: 8px 18px;
+      border: 1px solid var(--cyan);
+      color: var(--cyan);
+      text-decoration: none;
+      transition: background 0.2s, color 0.2s;
+    }
+
+    .nav-cta:hover {
+      background: var(--cyan);
+      color: #000;
+    }
+
+    /* ── HERO ─────────────────────────────────────────── */
+    .hero {
+      padding: 72px 32px 48px;
+      border-bottom: 1px solid var(--border);
+      max-width: 840px;
+      margin: 0 auto;
+    }
+
+    .hero-label {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--cyan);
+      margin-bottom: 16px;
+    }
+
+    .hero h1 {
+      font-size: clamp(28px, 5vw, 44px);
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: var(--heading);
+      line-height: 1.15;
+      margin-bottom: 20px;
+    }
+
+    .hero-meta {
+      font-size: 13px;
+      color: var(--muted);
+      letter-spacing: 0.04em;
+    }
+
+    /* ── HEALTH DISCLAIMER ───────────────────────────── */
+    .disclaimer {
+      max-width: 840px;
+      margin: 0 auto;
+      padding: 0 32px;
+    }
+
+    .disclaimer-box {
+      margin: 36px 0;
+      padding: 20px 24px;
+      border-left: 3px solid var(--cyan);
+      background: var(--cyan-dim);
+      font-size: 13px;
+      color: #ccc;
+      line-height: 1.6;
+    }
+
+    .disclaimer-box strong {
+      color: var(--cyan);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      font-size: 11px;
+      display: block;
+      margin-bottom: 6px;
+    }
+
+    /* ── CONTENTS ─────────────────────────────────────── */
+    .toc {
+      max-width: 840px;
+      margin: 0 auto;
+      padding: 0 32px 48px;
+    }
+
+    .toc h2 {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 16px;
+    }
+
+    .toc ol {
+      list-style: none;
+      columns: 2;
+      gap: 24px;
+    }
+
+    @media (max-width: 540px) { .toc ol { columns: 1; } }
+
+    .toc li {
+      margin-bottom: 8px;
+    }
+
+    .toc a {
+      font-size: 13px;
+      color: var(--muted);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .toc a:hover { color: var(--cyan); }
+
+    /* ── MAIN CONTENT ─────────────────────────────────── */
+    .content {
+      max-width: 840px;
+      margin: 0 auto;
+      padding: 0 32px 80px;
+    }
+
+    .section {
+      padding: 48px 0;
+      border-top: 1px solid var(--border);
+    }
+
+    .section-label {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--cyan);
+      margin-bottom: 10px;
+    }
+
+    .section h2 {
+      font-size: clamp(18px, 3vw, 24px);
+      font-weight: 700;
+      color: var(--heading);
+      letter-spacing: -0.01em;
+      margin-bottom: 20px;
+      line-height: 1.3;
+    }
+
+    .section p {
+      margin-bottom: 16px;
+      color: var(--text);
+    }
+
+    .section ul,
+    .section ol {
+      padding-left: 0;
+      margin-bottom: 16px;
+      list-style: none;
+    }
+
+    .section ul li,
+    .section ol li {
+      position: relative;
+      padding-left: 20px;
+      margin-bottom: 8px;
+      color: var(--text);
+    }
+
+    .section ul li::before {
+      content: '—';
+      position: absolute;
+      left: 0;
+      color: var(--cyan);
+    }
+
+    .section ol {
+      counter-reset: ol-counter;
+    }
+
+    .section ol li {
+      counter-increment: ol-counter;
+    }
+
+    .section ol li::before {
+      content: counter(ol-counter) '.';
+      position: absolute;
+      left: 0;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .section strong {
+      color: var(--heading);
+      font-weight: 600;
+    }
+
+    .section em {
+      color: var(--muted);
+      font-style: italic;
+    }
+
+    /* inline note block */
+    .note {
+      padding: 16px 20px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-left: 3px solid #444;
+      font-size: 13px;
+      color: var(--muted);
+      margin: 20px 0;
+      line-height: 1.6;
+    }
+
+    /* CAPS disclaimer */
+    .caps-block {
+      font-size: 12px;
+      color: var(--muted);
+      line-height: 1.8;
+      padding: 20px 24px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      margin: 16px 0;
+      letter-spacing: 0.02em;
+    }
+
+    /* ── FOOTER ───────────────────────────────────────── */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 40px 32px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 16px;
+      text-align: center;
+    }
+
+    .footer-logo {
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--heading);
+      text-decoration: none;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 24px;
+      list-style: none;
+    }
+
+    .footer-links a {
+      font-size: 12px;
+      letter-spacing: 0.06em;
+      color: var(--muted);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .footer-links a:hover { color: var(--heading); }
+
+    .footer-copy {
+      font-size: 11px;
+      color: #444;
+      letter-spacing: 0.06em;
+    }
+
+    @media (max-width: 600px) {
+      nav { padding: 0 20px; }
+      .hero, .disclaimer, .toc, .content { padding-left: 20px; padding-right: 20px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a class="nav-logo" href="https://www.purepath.digital/">PurePath</a>
+  <ul class="nav-links">
+    <li><a href="https://www.purepath.digital/">HOME</a></li>
+    <li><a href="https://www.purepath.digital/privacy-policy.html">PRIVACY</a></li>
+    <li><a class="active" href="/terms-of-service.html">TERMS</a></li>
+  </ul>
+  <a class="nav-cta" href="https://www.purepath.digital/#download">GET THE APP</a>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-label">Legal</div>
+  <h1>Terms of Service</h1>
+  <p class="hero-meta">Effective Date: June 25, 2025&nbsp;&nbsp;|&nbsp;&nbsp;Last Updated: June 25, 2025</p>
+</div>
+
+<!-- INTRO + DISCLAIMER -->
+<div class="disclaimer">
+  <p style="margin-top:32px;">Welcome to PurePath. Please read these Terms of Service ("Terms") carefully before downloading, installing, or using the PurePath mobile application ("App," "Service," or "PurePath"). By accessing or using the App you confirm that you have read, understood, and agree to be bound by these Terms and our Privacy Policy. If you do not agree, do not use the App.</p>
+
+  <div class="disclaimer-box">
+    <strong>Important — Health Disclaimer</strong>
+    PurePath provides environmental awareness information only. It is not a medical device, does not diagnose health conditions, and is not a substitute for professional medical, environmental, or safety advice. Always consult a qualified professional regarding health or safety concerns.
+  </div>
+</div>
+
+<!-- TABLE OF CONTENTS -->
+<div class="toc">
+  <h2>Contents</h2>
+  <ol>
+    <li><a href="#s1">Who We Are</a></li>
+    <li><a href="#s2">Eligibility</a></li>
+    <li><a href="#s3">License to Use</a></li>
+    <li><a href="#s4">How the App Works</a></li>
+    <li><a href="#s5">Camera &amp; Photo Permissions</a></li>
+    <li><a href="#s6">User Accounts</a></li>
+    <li><a href="#s7">Purchases &amp; Subscriptions</a></li>
+    <li><a href="#s8">Refunds</a></li>
+    <li><a href="#s9">No Medical or Safety Advice</a></li>
+    <li><a href="#s10">Limitation of Liability</a></li>
+    <li><a href="#s11">Disclaimer of Warranties</a></li>
+    <li><a href="#s12">Intellectual Property</a></li>
+    <li><a href="#s13">User Conduct</a></li>
+    <li><a href="#s14">Third-Party Services</a></li>
+    <li><a href="#s15">Privacy</a></li>
+    <li><a href="#s16">Changes to the App or These Terms</a></li>
+    <li><a href="#s17">Termination</a></li>
+    <li><a href="#s18">Governing Law &amp; Dispute Resolution</a></li>
+    <li><a href="#s19">Severability</a></li>
+    <li><a href="#s20">Contact Us</a></li>
+  </ol>
+</div>
+
+<!-- SECTIONS -->
+<div class="content">
+
+  <div class="section" id="s1">
+    <div class="section-label">01</div>
+    <h2>Who We Are</h2>
+    <p>PurePath is operated by PurePath Inc. ('we,' 'us,' or 'our'), a company registered in Canada. The App is designed to help consumers understand potential microplastic and chemical exposure risk in their home environments through AI-assisted room scanning and personalised recommendations.</p>
+  </div>
+
+  <div class="section" id="s2">
+    <div class="section-label">02</div>
+    <h2>Eligibility</h2>
+    <p>You must be at least 13 years of age to use PurePath. If you are under 18, you must have permission from a parent or legal guardian. By using the App you represent and warrant that you meet these requirements. We reserve the right to refuse access to anyone at any time.</p>
+  </div>
+
+  <div class="section" id="s3">
+    <div class="section-label">03</div>
+    <h2>License to Use</h2>
+    <p>Subject to your compliance with these Terms, PurePath grants you a personal, limited, non-exclusive, non-transferable, revocable licence to download and use the App on Apple iOS devices that you own or control, solely for your personal, non-commercial purposes.</p>
+    <p>You may not:</p>
+    <ul>
+      <li>Copy, modify, adapt, or create derivative works of the App;</li>
+      <li>Reverse-engineer, decompile, or attempt to extract the source code;</li>
+      <li>Sell, sublicense, rent, lease, or transfer your rights under this licence;</li>
+      <li>Use the App in any unlawful manner or for any unlawful purpose;</li>
+      <li>Remove or alter any proprietary notices, labels, or marks in the App.</li>
+    </ul>
+  </div>
+
+  <div class="section" id="s4">
+    <div class="section-label">04</div>
+    <h2>How the App Works</h2>
+    <p>PurePath uses your device camera to capture images of rooms in your home. Those images are processed by an AI model to identify materials present (e.g., cookware, bedding, bathroom fixtures) and estimate potential microplastic or chemical exposure risk. The App generates:</p>
+    <ul>
+      <li>A per-room Exposure Score (0–100);</li>
+      <li>A whole-home weighted Exposure Score;</li>
+      <li>A material analysis and Exposure Report;</li>
+      <li>Personalised safe-swap product recommendations based on your scan results and behavioural questionnaire responses.</li>
+    </ul>
+    <p>Scores and recommendations are probabilistic estimates derived from material science research and AI analysis of visual data. They are intended as educational guidance only. Results may vary based on image quality, lighting, room conditions, and the inherent limitations of AI-based visual analysis.</p>
+  </div>
+
+  <div class="section" id="s5">
+    <div class="section-label">05</div>
+    <h2>Camera &amp; Photo Permissions</h2>
+    <p>The App requires access to your device camera to perform room scans. By granting camera permission you acknowledge and agree that:</p>
+    <ul>
+      <li>Images captured during a scan are processed for the sole purpose of generating your Exposure Report and recommendations;</li>
+      <li>We do not store your raw images on our servers beyond what is necessary to process your scan. Please refer to our Privacy Policy for full details on data handling;</li>
+      <li>You are responsible for ensuring that any individuals visible in images you capture have consented to being photographed where required by applicable law;</li>
+      <li>You should not scan areas containing sensitive personal documents, financial information, or anything you do not wish to be transmitted to our AI processing infrastructure.</li>
+    </ul>
+    <p>You may revoke camera permission at any time through your device Settings. Revoking permission will prevent the core functionality of the App from operating.</p>
+  </div>
+
+  <div class="section" id="s6">
+    <div class="section-label">06</div>
+    <h2>User Accounts</h2>
+    <p>Certain features of PurePath may require you to create an account. You agree to provide accurate and complete registration information and to keep it up to date. You are responsible for maintaining the confidentiality of your account credentials and for all activity that occurs under your account. Notify us immediately at <a href="mailto:hello@purepath.app" style="color:var(--cyan);">hello@purepath.app</a> if you suspect any unauthorised use of your account.</p>
+    <p>We reserve the right to suspend or terminate your account if we determine, in our sole discretion, that you have violated these Terms.</p>
+  </div>
+
+  <div class="section" id="s7">
+    <div class="section-label">07</div>
+    <h2>Purchases &amp; Subscriptions</h2>
+    <p>PurePath offers optional paid features through in-app purchases ('IAP') processed exclusively by Apple Inc. via the App Store. Current purchase options may include:</p>
+    <ul>
+      <li><strong>One-time Exposure Report unlock</strong> — access your full Exposure Report for a single scan session;</li>
+      <li><strong>5-Report Pack</strong> — a consumable bundle of five Exposure Report unlocks;</li>
+      <li><strong>Monthly Subscription</strong> — unlimited scans and reports, renewed monthly;</li>
+      <li><strong>Annual Subscription</strong> — unlimited scans and reports, renewed yearly.</li>
+    </ul>
+    <p><strong>Billing.</strong> All purchases are billed through your Apple ID account. Subscription pricing, trial periods, and renewal terms are displayed at the point of purchase within the App.</p>
+    <p><strong>Auto-Renewal.</strong> Subscriptions automatically renew unless cancelled at least 24 hours before the end of the current period. Your Apple ID account will be charged within 24 hours prior to the end of the current period. You can manage or cancel subscriptions at any time in your Apple ID Account Settings.</p>
+    <p><strong>Free Trials.</strong> Where a free trial is offered, any unused portion of a free trial period will be forfeited when you purchase a subscription.</p>
+    <p><strong>Price Changes.</strong> We may change subscription prices from time to time. Where permitted by law, we will provide reasonable notice of any price change. Continued use of the subscription after a price change constitutes acceptance of the new price.</p>
+    <div class="note">All billing for in-app purchases is handled by Apple Inc. Disputes about charges should be directed to Apple Support at <a href="https://reportaproblem.apple.com" target="_blank" rel="noopener" style="color:var(--cyan);">reportaproblem.apple.com</a>. PurePath does not process or store your payment card information.</div>
+  </div>
+
+  <div class="section" id="s8">
+    <div class="section-label">08</div>
+    <h2>Refunds</h2>
+    <p>Because all purchases are processed through the Apple App Store, refund requests are governed by Apple's refund policies. PurePath does not directly issue refunds. To request a refund please visit <a href="https://reportaproblem.apple.com" target="_blank" rel="noopener" style="color:var(--cyan);">reportaproblem.apple.com</a> or contact Apple Support. We are unable to override Apple's refund decisions.</p>
+  </div>
+
+  <div class="section" id="s9">
+    <div class="section-label">09</div>
+    <h2>No Medical or Safety Advice</h2>
+    <p>PurePath is an informational tool, not a medical device. Nothing in the App — including Exposure Scores, Exposure Reports, material analyses, or safe-swap recommendations — constitutes medical, clinical, occupational health, or environmental safety advice. The App does not:</p>
+    <ul>
+      <li>Diagnose, treat, cure, or prevent any disease or health condition;</li>
+      <li>Replace consultation with a physician, toxicologist, environmental health specialist, or other qualified professional;</li>
+      <li>Guarantee that any product, material, or environment is safe or unsafe for any individual.</li>
+    </ul>
+    <p>Exposure to microplastics and chemicals is a complex and evolving area of scientific research. Our scoring methodology is based on currently available peer-reviewed literature and may not reflect the most recent findings. Always seek professional advice before making decisions that could affect your health or the health of others.</p>
+  </div>
+
+  <div class="section" id="s10">
+    <div class="section-label">10</div>
+    <h2>Limitation of Liability</h2>
+    <p>To the maximum extent permitted by applicable law, PurePath, its officers, directors, employees, agents, and licensors shall not be liable for any indirect, incidental, special, consequential, punitive, or exemplary damages, including but not limited to:</p>
+    <ul>
+      <li>Loss of data, revenue, profits, or business;</li>
+      <li>Personal injury or property damage arising from your use of or reliance on information provided by the App;</li>
+      <li>Errors, inaccuracies, or omissions in AI-generated scan results or recommendations;</li>
+      <li>Any interruption, suspension, or termination of the Service.</li>
+    </ul>
+    <p>In jurisdictions where limitation of liability for personal injury is not permitted, this limitation shall not apply to personal injury claims. In all other cases, our total liability to you for all claims arising under these Terms shall not exceed the greater of (a) the amount you paid to PurePath in the twelve months preceding the claim, or (b) CAD $100.</p>
+  </div>
+
+  <div class="section" id="s11">
+    <div class="section-label">11</div>
+    <h2>Disclaimer of Warranties</h2>
+    <div class="caps-block">
+      THE APP AND ALL CONTENT, SCORES, ANALYSES, AND RECOMMENDATIONS ARE PROVIDED "AS IS" AND "AS AVAILABLE" WITHOUT WARRANTIES OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, ACCURACY, OR NON-INFRINGEMENT. PUREPATH DOES NOT WARRANT THAT:<br><br>
+      THE APP WILL BE ERROR-FREE, UNINTERRUPTED, OR FREE OF VIRUSES OR OTHER HARMFUL COMPONENTS;<br><br>
+      SCAN RESULTS OR RECOMMENDATIONS WILL BE ACCURATE, COMPLETE, OR RELIABLE FOR YOUR SPECIFIC CIRCUMSTANCES;<br><br>
+      THE APP WILL MEET YOUR REQUIREMENTS OR EXPECTATIONS.
+    </div>
+    <p>Some jurisdictions do not allow exclusion of implied warranties, so some of the above exclusions may not apply to you.</p>
+  </div>
+
+  <div class="section" id="s12">
+    <div class="section-label">12</div>
+    <h2>Intellectual Property</h2>
+    <p>All intellectual property rights in the App — including but not limited to software, design, graphics, text, AI models, scoring algorithms, and the PurePath brand — are owned by PurePath Inc. or its licensors. Nothing in these Terms transfers ownership of any intellectual property to you.</p>
+    <p>Your Exposure Reports and scan results generated by the App are provided to you for your personal use. You may not reproduce, distribute, or publicly display them for commercial purposes without our prior written consent.</p>
+  </div>
+
+  <div class="section" id="s13">
+    <div class="section-label">13</div>
+    <h2>User Conduct</h2>
+    <p>When using PurePath you agree not to:</p>
+    <ul>
+      <li>Use the App to scan other people's homes without their knowledge and consent;</li>
+      <li>Attempt to manipulate, game, or artificially influence Exposure Scores;</li>
+      <li>Transmit through the App any content that is unlawful, defamatory, or otherwise objectionable;</li>
+      <li>Use automated tools, bots, scrapers, or scripts to interact with the App;</li>
+      <li>Interfere with or disrupt the App's servers, networks, or security features;</li>
+      <li>Circumvent any access controls or content restrictions implemented in the App.</li>
+    </ul>
+  </div>
+
+  <div class="section" id="s14">
+    <div class="section-label">14</div>
+    <h2>Third-Party Services</h2>
+    <p>The App may integrate with or reference third-party services, including but not limited to Apple App Store (purchases), RevenueCat (subscription management), and AI infrastructure providers (scan processing). These third parties operate under their own terms of service and privacy policies. PurePath is not responsible for the practices of any third-party service provider.</p>
+    <p>Safe-swap product recommendations may include links to or references to third-party products. PurePath does not endorse or guarantee any third-party product, and any purchase you make from a third party is solely between you and that seller.</p>
+  </div>
+
+  <div class="section" id="s15">
+    <div class="section-label">15</div>
+    <h2>Privacy</h2>
+    <p>Your privacy matters to us. Our <a href="https://www.purepath.digital/privacy-policy.html" style="color:var(--cyan);">Privacy Policy</a>, available within the App and at www.purepath.app/privacy, explains what information we collect, how we use it, and your rights regarding your data. By using the App you acknowledge that you have read and understood our Privacy Policy, which is incorporated into these Terms by reference.</p>
+    <p>Key privacy points:</p>
+    <ul>
+      <li>Camera images are processed for scan analysis and are not retained long-term on our servers;</li>
+      <li>We do not sell your personal data to third parties;</li>
+      <li>You may request deletion of your account and associated data by contacting us at <a href="mailto:hello@purepath.app" style="color:var(--cyan);">hello@purepath.app</a>.</li>
+    </ul>
+  </div>
+
+  <div class="section" id="s16">
+    <div class="section-label">16</div>
+    <h2>Changes to the App or These Terms</h2>
+    <p>We may update the App or these Terms at any time. When we make material changes to the Terms, we will notify you by updating the "Last Updated" date at the top of this document and, where appropriate, by in-app notification or email. Your continued use of the App after changes become effective constitutes your acceptance of the revised Terms.</p>
+    <p>We may modify, suspend, or discontinue any feature or aspect of the App at any time without prior notice and without liability to you.</p>
+  </div>
+
+  <div class="section" id="s17">
+    <div class="section-label">17</div>
+    <h2>Termination</h2>
+    <p>These Terms remain in effect until terminated. You may stop using the App at any time. We may terminate or suspend your access immediately, without notice or liability, if you breach any provision of these Terms or if we decide to discontinue the App.</p>
+    <p>Upon termination, your licence to use the App ceases immediately. Sections 9 (No Medical Advice), 10 (Limitation of Liability), 11 (Disclaimer of Warranties), 12 (Intellectual Property), and 18 (Governing Law) survive termination.</p>
+  </div>
+
+  <div class="section" id="s18">
+    <div class="section-label">18</div>
+    <h2>Governing Law &amp; Dispute Resolution</h2>
+    <p>These Terms are governed by and construed in accordance with the laws of the Province of Ontario and the federal laws of Canada applicable therein, without regard to conflict-of-law principles.</p>
+    <p>Any dispute arising out of or in connection with these Terms or the App shall first be attempted to be resolved through good-faith negotiation. If the parties cannot reach resolution within 30 days, disputes shall be submitted to binding arbitration in Toronto, Ontario, conducted in English under the applicable rules of ADR Institute of Canada, except that either party may seek injunctive or other equitable relief in a court of competent jurisdiction to prevent irreparable harm.</p>
+    <p>If you are a consumer resident in a jurisdiction that does not permit mandatory arbitration or waiver of class actions, this section shall not apply to you to the extent prohibited by applicable law.</p>
+  </div>
+
+  <div class="section" id="s19">
+    <div class="section-label">19</div>
+    <h2>Severability</h2>
+    <p>If any provision of these Terms is found to be invalid, illegal, or unenforceable under applicable law, that provision shall be modified to the minimum extent necessary to make it enforceable, or if that is not possible, severed from the Terms. The remaining provisions shall continue in full force and effect.</p>
+  </div>
+
+  <div class="section" id="s20">
+    <div class="section-label">20</div>
+    <h2>Contact Us</h2>
+    <p>If you have questions about these Terms, please contact us:</p>
+    <ul>
+      <li><strong>Email:</strong> <a href="mailto:hello@purepath.app" style="color:var(--cyan);">hello@purepath.app</a></li>
+      <li><strong>Website:</strong> <a href="https://www.purepath.app" style="color:var(--cyan);">www.purepath.app</a></li>
+      <li><strong>Mailing Address:</strong> PurePath Inc., Toronto, Ontario, Canada</li>
+    </ul>
+    <div class="disclaimer-box" style="margin-top:32px;">
+      By downloading or using PurePath you acknowledge that you have read, understood, and agree to these Terms of Service.
+    </div>
+    <p style="font-size:12px; color:var(--muted); margin-top:24px;">© 2025 PurePath Inc. All rights reserved.</p>
+  </div>
+
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <a class="footer-logo" href="https://www.purepath.digital/">PurePath</a>
+  <ul class="footer-links">
+    <li><a href="https://www.purepath.digital/">Home</a></li>
+    <li><a href="https://www.purepath.digital/privacy-policy.html">Privacy Policy</a></li>
+    <li><a href="/terms-of-service.html">Terms of Service</a></li>
+  </ul>
+  <p class="footer-copy">© 2026 PurePath. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
