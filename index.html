@@ -537,5 +537,15 @@
   </footer>
 
   <script src="app.js?v=2"></script>
+  <div id="cookie-banner" style="display:none; position:fixed; bottom:20px; left:20px; right:20px; max-width:600px; margin:0 auto; background:#0a0a0a; border:1px solid rgba(0,229,255,0.25); color:#fff; padding:18px 22px; font-family:'Inter', sans-serif; font-size:14px; line-height:1.5; z-index:9999; border-radius:12px; box-shadow:0 8px 32px rgba(0,0,0,0.5); display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:16px;">
+  <span style="color:rgba(255,255,255,0.85);">This site uses cookies to improve your experience. By continuing to browse, you agree to our use of cookies. <a href="/privacy-policy.html" style="color:#00E5FF; text-decoration:underline;">Learn more</a></span>
+  <button onclick="document.getElementById('cookie-banner').style.display='none'; localStorage.setItem('cookieConsent','true');" style="background:#00E5FF; color:#0a0a0a; border:none; padding:9px 18px; border-radius:8px; font-family:'Inter', sans-serif; font-weight:600; font-size:13px; cursor:pointer; white-space:nowrap; flex-shrink:0;">Got it</button>
+</div>
+
+<script>
+  if (!localStorage.getItem('cookieConsent')) {
+    document.getElementById('cookie-banner').style.display = 'flex';
+  }
+</script>
 </body>
 </html>
