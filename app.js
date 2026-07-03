@@ -80,7 +80,8 @@
     {
       sel: '.protocol',
       items: [
-        { sel: '.section-title',          delay: 0   },
+        { sel: '.section-label',          delay: 0   },
+        { sel: '.section-title',          delay: 60  },
         { sel: '.section-sub',            delay: 120 },
         { sel: '.room-card:nth-child(1)', delay: 240 },
         { sel: '.room-card:nth-child(2)', delay: 380 },
@@ -135,13 +136,27 @@
       ]
     },
     {
+      sel: '.story',
+      items: [
+        { sel: '.section-label', delay: 0   },
+        { sel: '.section-title', delay: 100 },
+        { sel: '.story-body',    delay: 220 },
+        { sel: '.story-quote',   delay: 360 },
+      ]
+    },
+    {
+      sel: '.early-access',
+      items: [
+        { sel: '.ea-card', delay: 80 },
+      ]
+    },
+    {
       sel: '.final-cta',
       items: [
         { sel: '.section-label',    delay: 0   },
         { sel: '.final-title',      delay: 140 },
         { sel: '.final-sub',        delay: 260 },
         { sel: '.download-auditor', delay: 380 },
-        { sel: '.store-buttons',    delay: 500 },
       ]
     },
   ];
@@ -215,7 +230,7 @@
       tag: "BREAKING DOWN", title: "FRAGMENTATION",
       sub: "Plastics shed into invisible particles",
       desc: "UV light, abrasion and washing break macroplastics into micro- and nano-particles. These fragments are small enough to float in air, contaminate water, and absorb into food — undetectable without instrumentation.",
-      stat: "10⁹ MICROPLASTIC PARTICLES IN 1L OF BOTTLED WATER",
+      stat: "~240,000 PLASTIC PARTICLES IN 1L OF BOTTLED WATER",
       accent: "#22d3ee",
     },
     {
@@ -223,7 +238,7 @@
       tag: "INSIDE YOU", title: "HUMAN INGESTION",
       sub: "Entering the body through food, water & air",
       desc: "We ingest microplastics through contaminated tap water, food cooked in degraded cookware, inhaled laundry vapours, and even the air inside our homes. Nano-plastics can cross the blood-brain barrier.",
-      stat: "1.2 CREDIT CARDS WORTH OF PLASTIC INGESTED PER WEEK",
+      stat: "UP TO A CREDIT CARD'S WORTH OF PLASTIC INGESTED PER WEEK",
       accent: "#ff4d8d",
     },
   ];
@@ -283,4 +298,34 @@
   document.getElementById('jd-next').addEventListener('click', () => go(active + 1));
   render(0);
   restartCycle();
+})();
+
+
+/* ══════════════════════════════════════════════
+   3. EARLY-ACCESS FORM (not yet wired to a backend)
+   Shows a local confirmation and stores nothing.
+   To go live, POST to an endpoint that delivers to
+   community@purepath.digital and remove preventDefault.
+══════════════════════════════════════════════ */
+(function () {
+  const form = document.getElementById('ea-form');
+  if (!form) return;
+  const email   = document.getElementById('ea-email');
+  const note    = document.getElementById('ea-note');
+  const success = document.getElementById('ea-success');
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    const value = (email.value || '').trim();
+    const valid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
+    if (!valid) {
+      email.setAttribute('aria-invalid', 'true');
+      email.focus();
+      return;
+    }
+    email.removeAttribute('aria-invalid');
+    form.hidden = true;
+    if (note) note.hidden = true;
+    if (success) success.hidden = false;
+  });
 })();
