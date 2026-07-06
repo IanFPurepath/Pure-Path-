@@ -607,6 +607,37 @@
   </footer>
 
   <script src="app.js?v=2"></script>
+  <script>
+document.getElementById('ea-form').addEventListener('submit', function(e) {
+  e.preventDefault();
+
+  var form = document.getElementById('ea-form');
+  var emailInput = document.getElementById('ea-email');
+  var successMsg = document.getElementById('ea-success');
+  var submitBtn = form.querySelector('.ea-btn');
+
+  var email = emailInput.value.trim();
+  if (!email) return;
+
+  submitBtn.disabled = true;
+  submitBtn.textContent = 'Submitting...';
+
+  var body = new URLSearchParams();
+  body.append('fields[email]', email);
+  body.append('ml-submit', '1');
+  body.append('anticsrf', 'true');
+
+  fetch('https://assets.mailerlite.com/jsonp/2492814/forms/192249104288450320/subscribe', {
+    method: 'POST',
+    mode: 'no-cors',
+    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+    body: body.toString()
+  }).finally(function() {
+    form.style.display = 'none';
+    successMsg.hidden = false;
+  });
+});
+</script>
   <div id="cookie-banner" style="display:none; position:fixed; bottom:20px; left:20px; right:20px; max-width:600px; margin:0 auto; background:#0a0a0a; border:1px solid rgba(0,229,255,0.25); color:#fff; padding:18px 22px; font-family:'Inter', sans-serif; font-size:14px; line-height:1.5; z-index:9999; border-radius:12px; box-shadow:0 8px 32px rgba(0,0,0,0.5); display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:16px;">
   <span style="color:rgba(255,255,255,0.85);">This site uses cookies to improve your experience. By continuing to browse, you agree to our use of cookies. <a href="/privacy-policy.html" style="color:#00E5FF; text-decoration:underline;">Learn more</a></span>
   <button onclick="document.getElementById('cookie-banner').style.display='none'; localStorage.setItem('cookieConsent','true');" style="background:#00E5FF; color:#0a0a0a; border:none; padding:9px 18px; border-radius:8px; font-family:'Inter', sans-serif; font-weight:600; font-size:13px; cursor:pointer; white-space:nowrap; flex-shrink:0;">Got it</button>
