@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Research — PurePath</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+    :root {
+      --bg:         #080d10;
+      --bg-card:    #0d1519;
+      --bg-card2:   #101c22;
+      --border:     rgba(0, 229, 255, 0.12);
+      --cyan:       #00E5FF;
+      --cyan-dim:   rgba(0, 229, 255, 0.6);
+      --cyan-glow:  rgba(0, 229, 255, 0.08);
+      --white:      #ffffff;
+      --grey:       rgba(255,255,255,0.5);
+      --grey-light: rgba(255,255,255,0.75);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--white);
+      min-height: 100vh;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ─── HEADER ─── */
+    .header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(8, 13, 16, 0.92);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      padding: 16px 20px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .back-btn {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      color: var(--cyan);
+      font-size: 14px;
+      font-weight: 500;
+      text-decoration: none;
+      letter-spacing: 0.02em;
+      cursor: pointer;
+      background: none;
+      border: none;
+    }
+
+    .back-btn svg { flex-shrink: 0; }
+
+    .header-title {
+      font-size: 15px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--white);
+      margin: 0 auto;
+      padding-right: 36px; /* optical center */
+    }
+
+    /* ─── HERO ─── */
+    .hero {
+      padding: 48px 24px 32px;
+      text-align: center;
+      position: relative;
+    }
+
+    .hero::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 50%;
+      transform: translateX(-50%);
+      width: 60%; height: 1px;
+      background: linear-gradient(90deg, transparent, var(--border), transparent);
+    }
+
+    .hero-eyebrow {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--cyan);
+      margin-bottom: 14px;
+    }
+
+    .hero-heading {
+      font-size: 28px;
+      font-weight: 900;
+      line-height: 1.15;
+      letter-spacing: -0.01em;
+      margin-bottom: 14px;
+    }
+
+    .hero-sub {
+      font-size: 14px;
+      color: var(--grey-light);
+      line-height: 1.65;
+      max-width: 320px;
+      margin: 0 auto;
+    }
+
+    /* ─── CONTENT ─── */
+    .content {
+      padding: 28px 20px 60px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      max-width: 480px;
+      margin: 0 auto;
+    }
+
+    /* ─── SECTION LABEL ─── */
+    .section-label {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--cyan);
+      padding: 20px 4px 8px;
+    }
+
+    /* ─── STUDY CARD ─── */
+    .card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 20px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(0,229,255,0.25), transparent);
+    }
+
+    .card-badge {
+      display: inline-block;
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--cyan);
+      background: rgba(0,229,255,0.1);
+      border: 1px solid rgba(0,229,255,0.2);
+      border-radius: 4px;
+      padding: 3px 8px;
+      margin-bottom: 12px;
+    }
+
+    .card-stat {
+      font-size: 36px;
+      font-weight: 900;
+      color: var(--cyan);
+      line-height: 1;
+      margin-bottom: 4px;
+      letter-spacing: -0.02em;
+    }
+
+    .card-stat-label {
+      font-size: 13px;
+      color: var(--grey-light);
+      margin-bottom: 14px;
+      line-height: 1.5;
+    }
+
+    .card-title {
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: var(--white);
+      margin-bottom: 8px;
+    }
+
+    .card-body {
+      font-size: 13.5px;
+      color: var(--grey-light);
+      line-height: 1.65;
+      margin-bottom: 14px;
+    }
+
+    .card-cite {
+      font-size: 11px;
+      color: var(--grey);
+      line-height: 1.5;
+      border-top: 1px solid rgba(255,255,255,0.06);
+      padding-top: 12px;
+    }
+
+    .card-cite a {
+      color: var(--cyan-dim);
+      text-decoration: none;
+    }
+
+    .card-cite a:hover { text-decoration: underline; }
+
+    .card-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      border: 1px solid rgba(0,229,255,0.25);
+      background: rgba(0,229,255,0.06);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 14px;
+    }
+
+    .card-icon svg {
+      width: 18px;
+      height: 18px;
+      stroke: var(--cyan);
+      fill: none;
+      stroke-width: 1.5;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    /* highlight inline */
+    .hl { color: var(--cyan); font-weight: 700; }
+
+    /* ─── FOOTER NOTE ─── */
+    .footer-note {
+      text-align: center;
+      padding: 24px 24px 40px;
+      font-size: 12px;
+      color: var(--grey);
+      line-height: 1.7;
+      border-top: 1px solid rgba(255,255,255,0.05);
+    }
+
+    .footer-note span {
+      display: block;
+      font-size: 10px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--cyan);
+      margin-bottom: 8px;
+    }
+
+    /* ─── CTA ─── */
+    .cta-wrap {
+      padding: 0 20px 48px;
+      max-width: 480px;
+      margin: 0 auto;
+    }
+
+    .cta-btn {
+      display: block;
+      width: 100%;
+      background: var(--cyan);
+      color: #080d10;
+      font-family: 'Inter', sans-serif;
+      font-size: 14px;
+      font-weight: 800;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      text-align: center;
+      padding: 18px;
+      border-radius: 100px;
+      border: none;
+      cursor: pointer;
+      text-decoration: none;
+    }
+
+    /* ambient glow blobs */
+    .glow-blob {
+      position: fixed;
+      border-radius: 50%;
+      pointer-events: none;
+      filter: blur(80px);
+      opacity: 0.04;
+      z-index: 0;
+    }
+    .glow-1 {
+      width: 300px; height: 300px;
+      background: var(--cyan);
+      top: -60px; left: -80px;
+    }
+    .glow-2 {
+      width: 200px; height: 200px;
+      background: var(--cyan);
+      bottom: 100px; right: -60px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="glow-blob glow-1"></div>
+<div class="glow-blob glow-2"></div>
+
+<!-- HEADER -->
+<header class="header">
+  <button class="back-btn" onclick="history.back()">
+    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M10 13L5 8l5-5"/>
+    </svg>
+  </button>
+  <h1 class="header-title">The Research</h1>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <p class="hero-eyebrow">Peer-Reviewed Science</p>
+  <h2 class="hero-heading">What the data<br>actually shows</h2>
+  <p class="hero-sub">PurePath is built on published science. Every claim in the app links to a real study. Here's what the research says about microplastics in your home.</p>
+</section>
+
+<!-- CONTENT -->
+<main class="content">
+
+  <!-- CARDIOVASCULAR HEALTH -->
+  <p class="section-label">Cardiovascular Health</p>
+
+  <div class="card">
+    <div class="card-badge">New England Journal of Medicine · 2024</div>
+    <div class="card-stat">4.53×</div>
+    <div class="card-stat-label">higher risk of heart attack, stroke, or death</div>
+    <p class="card-body">
+      Patients who had microplastics and nanoplastics detected in carotid artery plaque were significantly more likely to experience a major adverse cardiovascular event over a 34-month follow-up period compared to those with no detected particles.
+    </p>
+    <p class="card-cite">
+      Marfella R. et al. <em>Microplastics and Nanoplastics in Atheromas and Cardiovascular Events.</em> N Engl J Med, 2024; 390:900–910.
+      <br><a href="https://www.nejm.org/doi/10.1056/NEJMoa2309822" target="_blank">doi: 10.1056/NEJMoa2309822 ↗</a>
+    </p>
+  </div>
+
+  <!-- KITCHEN -->
+  <p class="section-label">Kitchen</p>
+
+  <div class="card">
+    <div class="card-icon">
+      <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M8 12h8M12 8v8"/></svg>
+    </div>
+    <div class="card-badge">Science of the Total Environment · 2022</div>
+    <div class="card-stat">2.3M</div>
+    <div class="card-stat-label">micro- and nanoplastic particles released per use</div>
+    <p class="card-body">
+      A scratched or damaged PTFE (Teflon) non-stick pan can shed over 2.3 million microplastic and nanoplastic particles into food during a single cooking session — with higher temperatures accelerating release.
+    </p>
+    <p class="card-cite">
+      Kutralam-Muniasamy G. et al. <em>Microplastics from non-stick cookware during cooking.</em> Sci Total Environ, 2022.
+      <br><a href="https://doi.org/10.1016/j.scitotenv.2022.154328" target="_blank">doi: 10.1016/j.scitotenv.2022.154328 ↗</a>
+    </p>
+  </div>
+
+  <div class="card">
+    <div class="card-badge">Environmental Science & Technology · 2023</div>
+    <div class="card-title">Plastic Cutting Boards</div>
+    <p class="card-body">
+      Plastic cutting boards shed between <span class="hl">7.4 and 50.7 grams</span> of microplastics into food per year depending on use intensity. Wooden boards have been shown to shed significantly fewer particles.
+    </p>
+    <p class="card-cite">
+      Yue Zi et al. <em>Plastic cutting boards as a source of microplastics in food.</em> Environ Sci Technol, 2023.
+    </p>
+  </div>
+
+  <!-- BEDROOM -->
+  <p class="section-label">Bedroom</p>
+
+  <div class="card">
+    <div class="card-icon">
+      <svg viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="10" rx="1"/><path d="M3 11V8a1 1 0 011-1h5a1 1 0 011 1v3M14 11V8a1 1 0 011-1h5a1 1 0 011 1v3"/></svg>
+    </div>
+    <div class="card-badge">Environmental Pollution · 2019</div>
+    <div class="card-title">Bedding & Textile Fibers</div>
+    <p class="card-body">
+      Synthetic bedding — including polyester-fill pillows, microfiber comforters, and fleece blankets — continuously sheds plastic microfibers into the surrounding air during sleep movement and washing. These fibers are among the most common indoor microplastic types detected in human blood and lungs.
+    </p>
+    <p class="card-cite">
+      Gasperi J. et al. <em>Microplastics in air: Are we breathing it in?</em> Curr Opin Environ Sci Health, 2018; 1:1–5.
+    </p>
+  </div>
+
+  <div class="card">
+    <div class="card-badge">Nature Medicine · 2022</div>
+    <div class="card-title">Microplastics Found in Human Blood</div>
+    <p class="card-body">
+      A landmark study detected microplastic particles in <span class="hl">77% of human blood donors</span> tested, including PET from plastic bottles and polystyrene. Researchers noted indoor textile exposure as a key source of ongoing accumulation.
+    </p>
+    <p class="card-cite">
+      Leslie H.A. et al. <em>Discovery and quantification of plastic particle pollution in human blood.</em> Environ Int, 2022; 163:107199.
+      <br><a href="https://doi.org/10.1016/j.envint.2022.107199" target="_blank">doi: 10.1016/j.envint.2022.107199 ↗</a>
+    </p>
+  </div>
+
+  <!-- BATHROOM -->
+  <p class="section-label">Bathroom</p>
+
+  <div class="card">
+    <div class="card-icon">
+      <svg viewBox="0 0 24 24"><path d="M4 12h16M4 12a8 8 0 0116 0"/><path d="M12 12v8"/></svg>
+    </div>
+    <div class="card-badge">Marine Pollution Bulletin · 2016</div>
+    <div class="card-stat">700K+</div>
+    <div class="card-stat-label">microplastic fibers shed per wash cycle</div>
+    <p class="card-body">
+      A single synthetic garment or towel can release more than 700,000 plastic microfibers per wash. These fibers become airborne during drying and remain suspended in bathroom air long after the wash is done — where they are inhaled and settle on surfaces.
+    </p>
+    <p class="card-cite">
+      Napper I.E. & Thompson R.C. <em>Release of synthetic microplastic fibres from domestic washing machines.</em> Mar Pollut Bull, 2016; 112:39–45.
+      <br><a href="https://doi.org/10.1016/j.marpolbul.2016.09.025" target="_blank">doi: 10.1016/j.marpolbul.2016.09.025 ↗</a>
+    </p>
+  </div>
+
+  <div class="card">
+    <div class="card-badge">International Journal of Environmental Research & Public Health · 2021</div>
+    <div class="card-title">Personal Care Products</div>
+    <p class="card-body">
+      Many body washes, exfoliants, and toothpastes have historically contained polyethylene microbeads. While rinse-off microbeads are banned in several countries, microplastic particles from synthetic packaging and formulation ingredients remain common.
+    </p>
+    <p class="card-cite">
+      Jiménez-Skrzypek G. et al. <em>Microplastics in cosmetics and personal care products.</em> Int J Environ Res Public Health, 2021.
+    </p>
+  </div>
+
+</main>
+
+<!-- FOOTER NOTE -->
+<div class="footer-note">
+  <span>A Note on the Science</span>
+  Research on microplastics is rapidly evolving. PurePath reflects current peer-reviewed findings and updates recommendations as new studies emerge. Citations link to primary sources wherever possible.
+</div>
+
+<!-- CTA -->
+<div class="cta-wrap">
+  <a class="cta-btn" href="#">SCAN WHAT'S IN YOUR HOME</a>
+</div>
+
+</body>
+</html>
