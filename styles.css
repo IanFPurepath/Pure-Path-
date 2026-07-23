@@ -146,8 +146,7 @@ img { max-width: 100%; display: block; }
 /* ───────────── Hero ───────────── */
 .hero {
   position: relative;
-  min-height: 0;
-  height: calc(100vh - 96px); /* 96px = urgency bar ~36px + nav ~60px */
+  min-height: calc(100vh - 96px);
   padding: 1.5rem 3rem 1.5rem;
   display: flex;
   flex-direction: column;
