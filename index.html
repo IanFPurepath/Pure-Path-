@@ -628,15 +628,25 @@ document.getElementById('ea-form').addEventListener('submit', function(e) {
   body.append('fields[email]', email);
   body.append('ml-submit', '1');
   body.append('anticsrf', 'true');
-
-  fetch('https://assets.mailerlite.com/jsonp/2492814/forms/192249104288450320/subscribe', {
+  fetch('https://api.brevo.com/v3/contacts', {
     method: 'POST',
-    mode: 'no-cors',
-    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-    body: body.toString()
-  }).finally(function() {
+    headers: {
+      'api-key': 'xkeysib-8a346632e5d64645c19c02008cafc40782f857c8e577',
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({
+      email: email,
+      updateEnabled: true
+    })
+  })
+  .then(() => {
     form.style.display = 'none';
     successMsg.hidden = false;
+  })
+  .catch(() => {
+    submitBtn.disabled = false;
+    submitBtn.textContent = 'GET EARLY ACCESS';
+    alert('Signup failed. Try again.');
   });
 });
 </script>
