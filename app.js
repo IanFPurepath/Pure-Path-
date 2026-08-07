@@ -336,7 +336,7 @@
         throw new Error('Formspree rejected the signup');
       }
       if (typeof window.twq === 'function') {
-        window.twq('event', 'tw-rdazr-re9vx', {});
+        window.twq('event', 'tw-rdazr-re9w7', {});
       }
       form.reset();
       form.hidden = true;
