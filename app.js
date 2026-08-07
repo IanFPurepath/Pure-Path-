@@ -308,24 +308,52 @@
    community@purepath.digital and remove preventDefault.
 ══════════════════════════════════════════════ */
 (function () {
-  const form = document.getElementById('ea-form');
-  if (!form) return;
-  const email   = document.getElementById('ea-email');
-  const note    = document.getElementById('ea-note');
-  const success = document.getElementById('ea-success');
-
-  form.addEventListener('submit', function (e) {
-    e.preventDefault();
-    const value = (email.value || '').trim();
-    const valid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
-    if (!valid) {
-      email.setAttribute('aria-invalid', 'true');
-      email.focus();
-      return;
+  const form = document.getElementById('early-access-form');
+  if (!form) {
+    return;
+  }
+  const note = document.getElementById('ea-note');
+  const successMessage = document.getElementById('ea-success');
+  const submitButton = form.querySelector('button[type="submit"]');
+  form.addEventListener('submit', async function (event) {
+    event.preventDefault();
+    const originalButtonText = submitButton
+      ? submitButton.textContent
+      : 'GET EARLY ACCESS';
+    if (submitButton) {
+      submitButton.disabled = true;
+      submitButton.textContent = 'JOINING...';
     }
-    email.removeAttribute('aria-invalid');
-    form.hidden = true;
-    if (note) note.hidden = true;
-    if (success) success.hidden = false;
+    try {
+      const response = await fetch(form.action, {
+        method: 'POST',
+        body: new FormData(form),
+        headers: {
+          Accept: 'application/json'
+        }
+      });
+      if (!response.ok) {
+        throw new Error('Formspree rejected the signup');
+      }
+      if (typeof window.twq === 'function') {
+        window.twq('event', 'tw-rdazr-re9vx', {});
+      }
+      form.reset();
+      form.hidden = true;
+      if (note) {
+        note.hidden = true;
+      }
+      if (successMessage) {
+        successMessage.hidden = false;
+      }
+    } catch (error) {
+      console.error('Early-access signup failed:', error);
+
+      if (submitButton) {
+        submitButton.disabled = false;
+        submitButton.textContent = originalButtonText;
+      }
+      alert('Your signup could not be submitted. Please try again.');
+    }
   });
 })();
