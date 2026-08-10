@@ -1,9 +1,9 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<link rel="icon" type="image/png" href="/Favicon%20PP.png">
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="icon" type="image/png" href="/Favicon%20PP.png">
   <title>PurePath — Scan Your Home for Microplastics</title>
   <meta name="description" content="Scan your home for microplastics with PurePath, an AI camera app that flags plastic risks in your kitchen, bedroom, and bathroom and suggests safer swaps." />
   <!-- Open Graph / social share -->
@@ -18,624 +18,297 @@
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="PurePath — Scan Your Home for Microplastics" />
   <meta name="twitter:description" content="Spot everyday plastic and material risks in your home, and find safer swaps. Join the early-access list." />
-  <meta name="twitter:image" content="https://www.purepath.digital/og-image-v2.png?v=3" />  <!-- Canonical URL -->
-<link rel="canonical" href="https://www.purepath.digital/" />
-
-<!-- Structured Data — tells Google this is an app -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "SoftwareApplication",
-  "name": "PurePath",
-  "operatingSystem": "iOS",
-  "applicationCategory": "HealthApplication",
-  "description": "AI-powered home scanner that detects microplastic exposure risks in your kitchen, bedroom, and bathroom and recommends safer swaps.",
-  "url": "https://www.purepath.digital/",
-  "offers": {
-    "@type": "Offer",
-    "price": "0",
-    "priceCurrency": "USD"
+  <meta name="twitter:image" content="https://www.purepath.digital/og-image-v2.png?v=3" />
+  <link rel="canonical" href="https://www.purepath.digital/" />
+  <!-- Structured Data — tells Google this is an app -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "PurePath",
+    "operatingSystem": "iOS",
+    "applicationCategory": "HealthApplication",
+    "description": "AI-powered home scanner that detects microplastic exposure risks in your kitchen, bedroom, and bathroom and recommends safer swaps.",
+    "url": "https://www.purepath.digital/",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
   }
-}
-</script>
-  <link rel="stylesheet" href="styles.css" />
+  </script>
+  <link rel="stylesheet" href="preview.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
-<!-- X conversion tracking base code -->
-<script>
-!function(e,t,n,s,u,a){
-  e.twq||(s=e.twq=function(){
-    s.exe?s.exe.apply(s,arguments):s.queue.push(arguments);
-  },
-  s.version='1.1',
-  s.queue=[],
-  u=t.createElement(n),
-  u.async=!0,
-  u.src='https://static.ads-twitter.com/uwt.js',
-  a=t.getElementsByTagName(n)[0],
-  a.parentNode.insertBefore(u,a))
-}(window,document,'script');
-
-twq('config','rdazr');
-</script>
-<!-- End X conversion tracking base code -->  
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <!-- X conversion tracking base code -->
+  <script>
+  !function(e,t,n,s,u,a){
+    e.twq||(s=e.twq=function(){
+      s.exe?s.exe.apply(s,arguments):s.queue.push(arguments);
+    },
+    s.version='1.1',
+    s.queue=[],
+    u=t.createElement(n),
+    u.async=!0,
+    u.src='https://static.ads-twitter.com/uwt.js',
+    a=t.getElementsByTagName(n)[0],
+    a.parentNode.insertBefore(u,a))
+  }(window,document,'script');
+  twq('config','rdazr');
+  </script>
+  <!-- End X conversion tracking base code -->
 </head>
-  <body>
-
-  <!-- ─── URGENCY BAR ─────────────────────────────────── -->
-  <div class="urgency-bar">
-    <span class="urgency-dot"></span>
-    <span class="urgency-text"><span class="urgency-full">NEW RESEARCH: A 2022 study detected microplastics in the blood of most healthy adults tested — and much of it starts at home.</span><span class="urgency-short">Microplastics were found in the blood of most adults tested. Much of it starts at home.</span></span>
-    <a href="#vision" class="urgency-link">See how PurePath helps →</a>
-  </div>
-
-  <!-- ─── NAV ─────────────────────────────────────────── -->
-  <nav class="nav">
-    <a href="#top" class="brand">
-      <span class="brand-icon">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <rect x="3" y="3" width="7" height="7" rx="1.5"/>
-          <rect x="14" y="3" width="7" height="7" rx="1.5"/>
-          <rect x="3" y="14" width="7" height="7" rx="1.5"/>
-          <rect x="14" y="14" width="7" height="7" rx="1.5"/>
-        </svg>
-      </span>
-      <span class="brand-name">Pure<span class="brand-accent">Path</span></span>
-    </a>
-    <div class="nav-links">
-      <a href="#science">SCIENCE</a>
-      <a href="#story">OUR STORY</a>
-      <a href="#early-access" class="active">EARLY ACCESS</a>
-    </div>
-    <a href="#early-access" class="btn-outline">GET EARLY ACCESS</a>
-  </nav>
-
-  <!-- ─── HERO ────────────────────────────────────────── -->
-  <section class="hero" id="top">
-    <div class="hero-glow"></div>
-
-    <!-- floating pills -->
-    <div class="floating-pills">
-      <div class="pill pill-tl">
-        <span class="pill-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h4l3-9 4 18 3-9h4"/></svg>
+<body>
+  <div class="page-shell" id="top">
+    <header class="site-header">
+      <a class="brand" href="#top" aria-label="PurePath home">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 42 48"><path d="M8 5h13c9 0 14 4 14 12 0 8-5 13-15 13H8V5Z"/><path d="M12 9v31"/><path d="M20 31c7 0 13-4 17-10-1 12-7 20-18 22" class="leaf"/></svg>
         </span>
-        <span>YOUR NYLON SHEETS: <em>LEACHING?</em></span>
-      </div>
+        <span class="brand-name">PurePath</span>
+      </a>
+      <nav class="desktop-nav" aria-label="Primary navigation">
+        <a class="active" href="#top">Home</a>
+        <a href="#how">How It Works</a>
+        <a href="#science">Science</a>
+        <a href="#insights">Features</a>
+        <a href="#early-access">FAQ</a>
+      </nav>
+      <a class="pill-button header-cta" href="#early-access">Get Early Access</a>
+    </header>
 
-      <div class="pill pill-tr">
-        <span class="pill-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12c4-3 14-3 18 0"/><path d="M3 16c4-3 14-3 18 0"/></svg>
-        </span>
-        <span>NON-STICK COOKWARE: <em>PEELING?</em></span>
-      </div>
+    <main>
+      <section class="hero section-grid">
+        <div class="hero-copy">
+          <div class="eyebrow-pill">COMING SOON</div>
+          <h1>See what others don’t. <span>Protect what matters.</span></h1>
+          <p class="hero-sub">PurePath helps you identify potential microplastic exposure sources in your home and shows you what to change first.</p>
 
-      <div class="pill pill-ml">
-        <span class="pill-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h4l3-9 4 18 3-9h4"/></svg>
-        </span>
-        <span>YOUR PILLOWS: <em>SHEDDING?</em></span>
-      </div>
-
-      <div class="pill pill-mr">
-        <span class="pill-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12c4-3 14-3 18 0"/><path d="M3 16c4-3 14-3 18 0"/></svg>
-        </span>
-        <span>SHOWER CURTAIN: <em>OFF-GASSING?</em></span>
-      </div>
-
-      <div class="pill pill-bl">
-        <span class="pill-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 4l-2 6h16l-2-6"/><path d="M4 10v10h16V10"/></svg>
-        </span>
-        <span>LAUNDRY VAPORS: <em>INHALED?</em></span>
-      </div>
-
-      <div class="pill pill-br">
-        <span class="pill-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3"/></svg>
-        </span>
-        <span>TAP WATER: <em>FIBER COUNT?</em></span>
-      </div>
-    </div>
-
-    <!-- central disc -->
-    <div class="hero-center">
-      <div class="disc opt-b">
-        <div class="disc-inner">
-          <p class="kicker">YOU MAY CONSUME UP TO</p>
-          <h1 class="mega mega--stat">121,000</h1>
-          <p class="kicker-lg">MICROPLASTIC PARTICLES<br/>EVERY YEAR</p>
-          <p class="hero-sub">A lot of them start inside your own home — in the air you breathe and the water you drink. PurePath scans your kitchen, bedroom, and bathroom to help you spot everyday plastic sources and find safer swaps.</p>
-          <p class="hero-source">Cox et al., 2019 · Environmental Science &amp; Technology</p>
-        </div>
-      </div>
-    </div>
-
-    <a href="#early-access" class="cta-button">GET EARLY ACCESS — IT'S FREE</a>
-    <a href="research.html" class="hero-trust hero-trust-link">See the research behind this →</a>
-  </section>
-
- <!-- ─── SECTION 02 — VISION ENGINE ───────────────── -->
-<section class="section vision" id="vision">
-  <p class="section-label">SECTION 01 — VISION ENGINE</p>
-  <h2 class="section-title">HOW THE AI <span class="cyan">SEES</span> YOUR HOME</h2>
-  <p class="section-sub">PurePath's computer vision model flags visual signs of material wear, degradation, and known high-risk materials<br/>that are easy to miss by eye.</p>
-
-  <div class="vision-grid">
-    <div class="vision-image">
-      <div class="ai-overlay">
-        <span class="overlay-tag">TOXIC ZONE</span>
-        <span class="circle c1"></span>
-        <span class="circle c2"></span>
-        <span class="circle c3"></span>
-      </div>
-      <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=1200&q=80" alt="kitchen scene" />
-      <div class="image-caption">A. DEGRADED NON-STICK SURFACE — FLAGGED HIGH RISK</div>
-    </div>
-
-    <div class="ai-panel">
-      <p class="panel-label">PUREPATH VISION ENGINE — LIVE READ</p>
-      <h3 class="panel-title">AI TRIGGER ANALYSIS</h3>
-      <p class="panel-status"><span class="status-dot"></span> SCANNING IN PROGRESS…</p>
-
-      <ul class="trigger-list">
-        <li>
-          <span class="dot"></span>
-          <div class="trig-info">
-            <strong>0.7 Specularity Detected</strong>
-            <span>SYNTHETIC SHEEN</span>
-          </div>
-          <span class="bar"></span>
-        </li>
-        <li>
-          <span class="dot"></span>
-          <div class="trig-info">
-            <strong>Surface Pilling Count: 42</strong>
-            <span>MICROPLASTIC SHEDDING RISK</span>
-          </div>
-          <span class="bar bar-2"></span>
-        </li>
-        <li>
-          <span class="dot"></span>
-          <div class="trig-info">
-            <strong>Scoring: 18 / 20</strong>
-            <span>EXTREME RISK</span>
-          </div>
-          <span class="bar bar-3"></span>
-        </li>
-        <li>
-          <span class="dot orange"></span>
-          <div class="trig-info">
-            <strong>Material Flagged: Worn Non-Stick Coating</strong>
-            <span>LEACHING RISK FACTOR</span>
-          </div>
-          <span class="bar bar-orange"></span>
-        </li>
-      </ul>
-    </div>
-  </div>
-</section>
-  <!-- ─── SECTION 03 — 3-ROOM PROTOCOL ─────────────── -->
-  <section class="section protocol" id="protocol">
-    <p class="section-label">SECTION 02 — THE PROTOCOL</p>
-    <h2 class="section-title">THE 3-ROOM <span class="cyan">PROTOCOL</span></h2>
-    <p class="section-sub">Contamination doesn't respect rooms. PurePath audits your entire biological<br/>environment.</p>
-
-    <div class="room-cards">
-      <article class="room-card">
-        <div class="room-img" style="background-image:url('https://images.unsplash.com/photo-1556909190-eccf4a8bf97a?w=1000&q=80')">
-          <span class="room-tag cyan-tag">CULINARY</span>
-        </div>
-        <div class="room-body">
-          <div class="room-head">
-            <span class="room-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18"/></svg>
-            </span>
-            <h3>THE KITCHEN AUDIT</h3>
-            <span class="risk-badge high">HIGH RISK</span>
-          </div>
-          <p class="room-tagline">Flagging non-stick cookware wear and coating breakdown.</p>
-         <p class="room-desc">PurePath's visual scan flags surface wear on coated pans, silicone utensils, and plastic cutting boards — helping you catch degradation before it ends up on your plate.</p>
-          <div class="room-tags">
-            <span class="tag pink">PTFE / TEFLON</span>
-            <span class="tag pink">BPA PLASTICIZERS</span>
-            <span class="tag pink">SILICONE ADDITIVES</span>
-          </div>
-        </div>
-      </article>
-
-      <article class="room-card">
-        <div class="room-img" style="background-image:url('https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=1000&q=80')">
-          <span class="room-tag cyan-tag">SANCTUARY</span>
-        </div>
-        <div class="room-body">
-          <div class="room-head">
-            <span class="room-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 10v10h18V10"/><path d="M3 10l9-6 9 6"/><path d="M7 20v-6h10v6"/></svg>
-            </span>
-            <h3>THE BEDROOM AUDIT</h3>
-            <span class="risk-badge critical">CRITICAL RISK</span>
-          </div>
-         <p class="room-tagline">Flagging synthetic materials in mattresses, pillows, and sheets.</p>
-          <p class="room-desc">You spend 8 hours a night inches from your mattress. PurePath flags synthetic materials — memory foam, synthetic pillow fill, and polyester sheets — associated with VOC off-gassing and fiber shedding.</p>
-          <div class="room-tags">
-            <span class="tag pink">MEMORY FOAM VOCS</span>
-            <span class="tag pink">FORMALDEHYDE</span>
-            <span class="tag pink">SYNTHETIC FIBER</span>
-          </div>
-        </div>
-      </article>
-
-      <article class="room-card">
-        <div class="room-img" style="background-image:url('https://images.unsplash.com/photo-1620626011761-996317b8d101?w=1000&q=80')">
-          <span class="room-tag cyan-tag">WELLNESS</span>
-        </div>
-        <div class="room-body">
-          <div class="room-head">
-            <span class="room-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v3"/><path d="M5 9h14a2 2 0 0 1 2 2v1H3v-1a2 2 0 0 1 2-2z"/><path d="M8 14v.5M12 14v.5M16 14v.5M10 17v.5M14 17v.5M12 20v.5"/></svg>
-            </span>
-            <h3>THE BATHROOM AUDIT</h3>
-            <span class="risk-badge moderate">MODERATE RISK</span>
-          </div>
-          <p class="room-tagline">Auditing your bath mat and daily habits — where bathroom exposure actually happens.</p>
-              <p class="room-desc">Your bath mat sits in constant moisture and takes direct foot contact every day — PurePath scans it to flag polyester pile, rubber, or plastic backing. Combined with what you wash your body with and the toothbrush you use daily, this builds your full Bathroom score.</p>
-              <div class="room-tags">
-                <span class="tag pink">BATH MAT FIBERS</span>
-                <span class="tag pink">WASH PRODUCT MATERIALS</span>
-                <span class="tag pink">TOOTHBRUSH BRISTLES</span>
+          <div class="mini-flow" aria-label="Scan, Analyze, Improve">
+            <div class="mini-step">
+              <div class="icon-box">
+                <svg class="ui-icon" viewBox="0 0 48 48" aria-hidden="true"><path d="M12 16h6l3-5h7l3 5h5a5 5 0 0 1 5 5v14a5 5 0 0 1-5 5H12a5 5 0 0 1-5-5V21a5 5 0 0 1 5-5Z"/><circle cx="24" cy="28" r="7"/></svg>
               </div>
-        </div>
-      </article>
-    </div>
-  </section>
-
-  <!-- ─── SECTION — MICROPLASTIC JOURNEY ───────────── -->
-  <section class="section journey" id="journey">
-    <p class="section-label">SECTION 03 — THE JOURNEY</p>
-    <h2 class="section-title">THE MICROPLASTIC <span class="cyan">JOURNEY</span></h2>
-    <p class="section-sub">From oil wells to your bloodstream — five steps that explain why<br/>contamination is unavoidable without awareness.</p>
-    <p class="journey-hint">Tap any step to explore</p>
-
-    <div class="journey-steps" id="journey-steps">
-      <div class="jstep" data-step="1" style="--step-accent:#ff8a4c">
-        <div class="jstep-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 3v18M3 12h18M5.6 5.6l12.8 12.8M5.6 18.4L18.4 5.6"/></svg>
-        </div>
-        <p class="jstep-num">STEP 1</p>
-        <p class="jstep-title">RAW FOSSIL FUELS</p>
-        <p class="jstep-sub">The Origin</p>
-      </div>
-      <div class="jstep-arrow">- - - &gt;</div>
-
-      <div class="jstep" data-step="2" style="--step-accent:#22d3ee">
-        <div class="jstep-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 9h18M8 3v4M16 3v4"/></svg>
-        </div>
-        <p class="jstep-num">STEP 2</p>
-        <p class="jstep-title">INDUSTRIAL MANUFACTURING</p>
-        <p class="jstep-sub">Mass Production</p>
-      </div>
-      <div class="jstep-arrow">- - - &gt;</div>
-
-      <div class="jstep" data-step="3" style="--step-accent:#22d3ee">
-        <div class="jstep-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 8h14l-1.5 12H6.5z"/><path d="M9 8V5a3 3 0 016 0v3"/></svg>
-        </div>
-        <p class="jstep-num">STEP 3</p>
-        <p class="jstep-title">CONSUMER PRODUCTS</p>
-        <p class="jstep-sub">In Your Home</p>
-      </div>
-      <div class="jstep-arrow">- - - &gt;</div>
-
-      <div class="jstep" data-step="4" style="--step-accent:#22d3ee">
-        <div class="jstep-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3l8 4v6c0 5-4 8-8 8s-8-3-8-8V7l8-4z"/></svg>
-        </div>
-        <p class="jstep-num">STEP 4</p>
-        <p class="jstep-title">FRAGMENTATION</p>
-        <p class="jstep-sub">Breaking Down</p>
-      </div>
-      <div class="jstep-arrow">- - - &gt;</div>
-
-      <div class="jstep" data-step="5" style="--step-accent:#ff4d8d">
-        <div class="jstep-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><circle cx="9" cy="10" r="1" fill="currentColor"/><circle cx="15" cy="10" r="1" fill="currentColor"/><path d="M8 15c1.5 1.5 6.5 1.5 8 0"/></svg>
-        </div>
-        <p class="jstep-num">STEP 5</p>
-        <p class="jstep-title">HUMAN INGESTION</p>
-        <p class="jstep-sub">Inside You</p>
-      </div>
-    </div>
-
-    <div class="journey-detail" id="journey-detail">
-      <div class="jd-icon"><div class="jd-icon-svg" id="jd-icon-svg"></div><span class="jd-step-of" id="jd-step-of">STEP 1 OF 5</span></div>
-      <div class="jd-body" id="jd-body">
-        <p class="jd-tag" id="jd-tag">THE ORIGIN</p>
-        <h3 class="jd-title" id="jd-title">RAW FOSSIL FUELS</h3>
-        <p class="jd-sub" id="jd-sub">Extracted from petroleum &amp; natural gas</p>
-        <p class="jd-desc" id="jd-desc">Plastics begin as crude oil or natural gas. Refineries crack these into ethylene and propylene — the chemical building blocks of every synthetic polymer that will eventually touch your food, skin, and lungs.</p>
-        <div class="jd-stat"><span class="dot"></span><strong id="jd-stat">99% OF PLASTICS ARE DERIVED FROM FOSSIL FUELS</strong></div>
-      </div>
-      <div class="jd-pager">
-        <button class="pager-btn" id="jd-prev" aria-label="Previous step"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 15l6-6 6 6"/></svg></button>
-        <span class="pager-count"><span id="jd-num">1</span><span class="pager-divider">/</span>5</span>
-        <button class="pager-btn" id="jd-next" aria-label="Next step"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></button>
-      </div>
-    </div>
-  </section>
-
-<!-- ─── SECTION 04 — SCIENCE ─────────────────────── -->
-<section class="section science" id="science">
-  <p class="section-label">SECTION 04 — METHODOLOGY</p>
-  <h2 class="section-title">THE SCIENCE OF <span class="cyan">PUREPATH</span></h2>
-  <p class="section-sub">Four stages of AI-driven analysis. One goal: material-level clarity<br/>about what surrounds you.</p>
-
-  <div class="stats-row">
-    <div class="stat-cell"><span class="stat-num">2.4M</span><span class="stat-label">TRAINING SAMPLES</span></div>
-    <div class="stat-cell"><span class="stat-num">3</span><span class="stat-label">ROOMS SCANNED</span></div>
-    <div class="stat-cell"><span class="stat-num">6</span><span class="stat-label">SCANS PER HOME</span></div>
-    <div class="stat-cell"><span class="stat-num">&lt;2s</span><span class="stat-label">SCAN TIME</span></div>
-  </div>
-
-  <div class="science-cards">
-    <article class="sci-card">
-      <span class="sci-num">01</span>
-      <div class="sci-icon">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2 2M17.1 17.1l2 2M4.9 19.1l2-2M17.1 6.9l2-2"/></svg>
-      </div>
-      <h3>VISUAL SCAN CAPTURE</h3>
-      <p>PurePath's camera pipeline captures detailed images of your surfaces, reading cues like sheen, texture, and wear patterns to flag material types and signs of degradation.</p>
-    </article>
-
-    <article class="sci-card">
-      <span class="sci-num">02</span>
-      <div class="sci-icon">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="6" cy="6" r="2"/><circle cx="18" cy="6" r="2"/><circle cx="12" cy="12" r="2"/><circle cx="6" cy="18" r="2"/><circle cx="18" cy="18" r="2"/><path d="M8 6l3 5M16 6l-3 5M11 13l-4 4M13 13l4 4"/></svg>
-      </div>
-      <h3>NEURAL PATTERN RECOGNITION</h3>
-      <p>A computer vision model trained on 2.4 million labeled surface images compares your scan against a library of common household materials — flagging types like non-stick coatings, PVC, and synthetic fibers that are associated with known chemical and microplastic exposure risks.</p>
-    </article>
-
-    <article class="sci-card">
-      <span class="sci-num">03</span>
-      <div class="sci-icon">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h12M3 18h8"/><circle cx="19" cy="17" r="3"/><path d="M19 15v2l1 1"/></svg>
-      </div>
-      <h3>RISK STRATIFICATION</h3>
-      <p>Flagged materials are weighted by exposure research, surface condition, and your usage habits to produce a personalised Risk Score for each item in your environment.</p>
-    </article>
-
-    <article class="sci-card">
-      <span class="sci-num">04</span>
-      <div class="sci-icon">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 9h18M9 5V3M15 5V3"/><path d="M7 13h4M7 17h8"/></svg>
-      </div>
-      <h3>SAFE SWAP GENERATION</h3>
-      <p>Results feed directly into PurePath's Safe Swap engine, which generates a ranked, room-by-room replacement plan — prioritising your highest-risk items first and tracking your Purity Score over time.</p>
-    </article>
-  </div>
-
-</section>
-  <!-- ─── SECTION — MOLECULAR DOSSIER ──────────────── -->
-  <section class="section dossier">
-    <h2 class="section-title">THE HOME <span class="cyan">DOSSIER</span></h2>
-    <div class="dossier-grid">
-
-      <!-- phone mockup -->
-      <div class="phone-mockup">
-        <div class="phone-frame">
-          <div class="phone-header">
-            <div class="phone-avatar">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><circle cx="9" cy="10" r="1" fill="currentColor"/><circle cx="15" cy="10" r="1" fill="currentColor"/><path d="M8 15c1.5 1.5 6.5 1.5 8 0"/></svg>
+              <strong>Scan</strong><span>Quick whole<br>home</span>
             </div>
-            <span class="phone-title">HOME DOSSIER</span>
-            <div class="phone-gear">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 11-2.83 2.83l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 11-4 0v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 11-2.83-2.83l.06-.06a1.65 1.65 0 00.33-1.82 1.65 1.65 0 00-1.51-1H3a2 2 0 110-4h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 112.83-2.83l.06.06a1.65 1.65 0 001.82.33H9a1.65 1.65 0 001-1.51V3a2 2 0 114 0v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 112.83 2.83l-.06.06a1.65 1.65 0 00-.33 1.82V9a1.65 1.65 0 001.51 1H21a2 2 0 110 4h-.09a1.65 1.65 0 00-1.51 1z"/></svg>
+            <div class="mini-connector"></div>
+            <div class="mini-step">
+              <div class="icon-box">
+                <svg class="ui-icon" viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="5"/><circle cx="9" cy="24" r="4"/><circle cx="39" cy="24" r="4"/><circle cx="24" cy="9" r="4"/><circle cx="24" cy="39" r="4"/><path d="M13 24h6m10 0h6M24 13v6m0 10v6M12 21l9-9m6 24 9-9M12 27l9 9m6-24 9 9"/></svg>
+              </div>
+              <strong>Analyze</strong><span>AI identifies materials<br>and visible wear.</span>
+            </div>
+            <div class="mini-connector"></div>
+            <div class="mini-step">
+              <div class="icon-box">
+                <svg class="ui-icon" viewBox="0 0 48 48" aria-hidden="true"><path d="M24 5 39 11v11c0 10-6 17-15 21C15 39 9 32 9 22V11L24 5Z"/><path d="m17 24 5 5 10-11"/></svg>
+              </div>
+              <strong>Improve</strong><span>Clear steps.<br>Lower potential exposure.</span>
             </div>
           </div>
 
-          <div class="purity-ring">
-            <svg viewBox="0 0 120 120">
-              <circle cx="60" cy="60" r="52" stroke="#0d3a52" stroke-width="6" fill="none"/>
-              <circle cx="60" cy="60" r="52" stroke="#22d3ee" stroke-width="6" fill="none" stroke-linecap="round" stroke-dasharray="326" stroke-dashoffset="120" transform="rotate(-90 60 60)" opacity=".9"/>
-            </svg>
-            <div class="purity-inner">
-              <span class="purity-label">PURITY INDEX</span>
-              <span class="purity-value">%</span>
-              <div class="purity-bars">
-                <span></span>
-                <span></span>
+          <form class="email-form signup-form" action="https://formspree.io/f/mbdnqvzn" method="POST">
+            <label class="sr-only" for="hero-email">Email address</label>
+            <input id="hero-email" name="email" type="email" placeholder="Enter your email" required />
+            <button type="submit">Get Early Access</button>
+          </form>
+          <div class="form-note">Pre-launch only available to first 500 signups.</div>
+        </div>
+
+        <div class="hero-visual" aria-label="PurePath app preview">
+          <div class="particle-field"></div>
+          <div class="phone phone-hero">
+            <div class="phone-notch"></div>
+            <div class="screen screen-top">
+              <img class="app-screen-image" src="purepath-home.jpg" alt="PurePath app home screen" />
+              <div class="scanner-window" aria-hidden="true">
+                <img src="purepath-house-tight.png" alt="" />
               </div>
             </div>
-           <div class="sync-pill"><span class="sync-dot"></span> SYNCING YOUR RESULTS</div>
           </div>
+          <div class="scan-rings" aria-hidden="true"><span></span><span></span><span></span></div>
+        </div>
+      </section>
 
-          <p class="exposure-label">EXPOSURE MAP</p>
-          <div class="exposure-grid">
-            <div class="exposure-cell">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 12l9-9 9 9-9 9z"/><path d="M9 12h6"/></svg>
-              <span>KITCHEN</span>
-            </div>
-            <div class="exposure-cell">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="8" width="18" height="10" rx="1"/><path d="M3 12h18"/></svg>
-              <span>BEDDING</span>
-            </div>
-            <div class="exposure-cell">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3v3"/><path d="M5 9h14a2 2 0 0 1 2 2v1H3v-1a2 2 0 0 1 2-2z"/><path d="M8 14v.5M12 14v.5M16 14v.5M10 17v.5M14 17v.5M12 20v.5"/></svg>
-              <span>BATHROOM</span>
-            </div>
-          </div>
+      <section id="science" class="science-strip">
+        <div class="strip-title">BUILT ON SCIENCE. DESIGNED FOR YOU.</div>
+        <div class="science-grid">
+          <article>
+            <div class="strip-icon"><svg class="ui-icon" viewBox="0 0 48 48"><path d="M18 5h12M21 5v12L10 37a4 4 0 0 0 4 6h20a4 4 0 0 0 4-6L27 17V5"/><path d="M15 32h18"/><circle cx="21" cy="27" r="1.5"/><circle cx="28" cy="34" r="1.5"/></svg></div>
+            <div><h3>Science-informed</h3><p>PurePath uses peer-reviewed research to help evaluate materials and conditions associated with microplastic exposure.</p></div>
+          </article>
+          <article>
+            <div class="strip-icon"><svg class="ui-icon" viewBox="0 0 48 48"><path d="M20 7c-5 0-8 4-8 8 0 1 .2 2 .6 3A8 8 0 0 0 10 34c1 4 4 7 9 7 2 0 4-1 5-2 1 1 3 2 5 2 5 0 8-3 9-7a8 8 0 0 0-2.6-16A8 8 0 0 0 28 7c-2 0-3 .7-4 2-1-1.3-2-2-4-2Z"/><path d="M24 9v30M17 15c3 0 5 2 5 5M31 15c-3 0-5 2-5 5M16 30c4 0 6 2 6 5M32 30c-4 0-6 2-6 5"/></svg></div>
+            <div><h3>AI-powered</h3><p>Advanced AI identifies visible materials and wear patterns.</p></div>
+          </article>
+          <article>
+            <div class="strip-icon"><svg class="ui-icon" viewBox="0 0 48 48"><circle cx="24" cy="15" r="7"/><path d="M9 42c1-10 6-15 15-15s14 5 15 15"/></svg></div>
+            <div><h3>Personalized</h3><p>Get recommendations customized for your home.</p></div>
+          </article>
+          <article>
+            <div class="strip-icon"><svg class="ui-icon" viewBox="0 0 48 48"><circle cx="24" cy="24" r="15"/><circle cx="24" cy="24" r="8"/><path d="m30 18 10-10M34 8h6v6"/></svg></div>
+            <div><h3>Actionable</h3><p>Small wins, clear priorities. Start with what matters most.</p></div>
+          </article>
+        </div>
+      </section>
 
-          <div class="phone-nav">
-            <div class="pn-cell"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 7h18l-2 13H5z"/></svg><span>SHOP</span></div>
-            <div class="pn-cell active"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M7 9h10M7 13h7"/></svg><span>RESULTS</span></div>
-            <div class="pn-camera">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8h4l2-3h6l2 3h4v12H3z"/><circle cx="12" cy="13" r="4"/></svg>
-            </div>
-            <div class="pn-cell"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 4-6 8-6s8 2 8 6"/></svg><span>PROFILE</span></div>
+
+      <section id="about" class="about-section section-grid">
+        <div class="about-copy">
+          <div class="section-kicker left">ABOUT PUREPATH</div>
+          <h2>Knowledge is power.<br><span>Action is protection.</span></h2>
+          <p class="about-lead">
+            Microplastics can come from everyday materials throughout the home.
+            PurePath uses camera-based AI and science-informed analysis to help you
+            understand which items may contribute most to potential exposure and
+            what to change first.
+          </p>
+
+          <div class="about-points">
+            <article>
+              <div class="about-point-icon">
+                <svg class="ui-icon" viewBox="0 0 48 48" aria-hidden="true">
+                  <path d="M24 5 39 11v11c0 10-6 17-15 21C15 39 9 32 9 22V11L24 5Z"/>
+                  <path d="M16 24h16M24 16v16"/>
+                </svg>
+              </div>
+              <div>
+                <h3>Identify potential exposure sources</h3>
+                <p>PurePath analyzes visible materials, surface condition and wear to flag items that may contribute to potential microplastic exposure.</p>
+              </div>
+            </article>
+
+            <article>
+              <div class="about-point-icon">
+                <svg class="ui-icon" viewBox="0 0 48 48" aria-hidden="true">
+                  <path d="M8 13h22M8 24h15M8 35h19"/>
+                  <circle cx="36" cy="13" r="4"/>
+                  <circle cx="29" cy="24" r="4"/>
+                  <circle cx="34" cy="35" r="4"/>
+                </svg>
+              </div>
+              <div>
+                <h3>Get clear, personalized recommendations</h3>
+                <p>See the swaps and practical changes that can address your highest-priority exposure sources first.</p>
+              </div>
+            </article>
+
+            <article>
+              <div class="about-point-icon">
+                <svg class="ui-icon" viewBox="0 0 48 48" aria-hidden="true">
+                  <path d="M8 39V10M8 39h32"/>
+                  <path d="m13 32 8-9 7 5 10-14"/>
+                  <path d="M33 14h5v5"/>
+                </svg>
+              </div>
+              <div>
+                <h3>Track progress over time</h3>
+                <p>Re-scan after making changes and compare your updated results to see how your home profile changes over time.</p>
+              </div>
+            </article>
           </div>
         </div>
-      </div>
 
-      <!-- right side -->
-      <div class="dossier-body">
-        <h3 class="dossier-title">BUILD YOUR HOUSEHOLD <span class="cyan">DOSSIER.</span></h3>
-        <p class="dossier-desc">Every scan is logged. Every flagged material is tracked. Watch your Risk Score drop as you swap high-risk materials for safer ones. Your home becomes a living dataset — getting cleaner with every audit.</p>
-
-        <div class="dossier-stats">
-          <div class="ds-cell"><span class="ds-num">3</span><span class="ds-lbl">Rooms Audited</span></div>
-              <div class="ds-cell"><span class="ds-num">6</span><span class="ds-lbl">Scans Per Home</span></div>
-              <div class="ds-cell"><span class="ds-num">&lt;2s</span><span class="ds-lbl">Scan Time</span></div>
+        <div class="about-visual">
+          <div class="about-image-card">
+            <img src="about-kitchen.jpg" alt="Household kitchen materials being reviewed" />
+            <div class="about-scan-grid" aria-hidden="true"></div>
+            <div class="about-tag about-tag-one" aria-hidden="true">
+              <span></span> MATERIAL ANALYSIS
+            </div>
+            <div class="about-tag about-tag-two" aria-hidden="true">
+              <span></span> VISIBLE WEAR
+            </div>
+            <div class="about-scan-target target-one" aria-hidden="true"></div>
+            <div class="about-scan-target target-two" aria-hidden="true"></div>
+            <div class="about-image-caption">PUREPATH VISION ANALYSIS</div>
+          </div>
+          <div class="about-note">
+            <div class="about-note-icon">i</div>
+            <p>PurePath uses visual analysis and user-provided information to estimate relative exposure potential. It does not measure microplastics in the body or provide a medical diagnosis.</p>
+          </div>
         </div>
+      </section>
 
-        <a href="#early-access" class="dossier-cta">GET EARLY ACCESS →</a>
-        <p class="dossier-cta-note">
-          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.5 12.6c0-2.7 2.2-4 2.3-4.1-1.3-1.8-3.2-2.1-3.9-2.1-1.7-.2-3.2 1-4.1 1-.9 0-2.2-1-3.6-.9-1.9 0-3.6 1.1-4.5 2.7-1.9 3.3-.5 8.2 1.4 10.9.9 1.3 2 2.8 3.4 2.8s1.9-.9 3.6-.9 2.2.9 3.6.9 2.5-1.3 3.4-2.7c1.1-1.5 1.5-3 1.5-3.1-.1-.1-3-1.1-3-4.5zM14.7 4.7c.8-.9 1.3-2.2 1.1-3.4-1.1.1-2.4.7-3.2 1.7-.7.8-1.4 2.1-1.2 3.3 1.3.1 2.5-.7 3.3-1.6z"/></svg>
-          Coming soon to iOS
-        </p>
-      </div>
-    </div>
-  </section>
+      <section id="how" class="how-section">
+        <div class="section-kicker">HOW IT WORKS</div>
+        <h2>3 simple steps to lower potential exposure</h2>
+        <div class="how-grid">
+          <article class="how-card">
+            <div class="how-circle"><svg class="ui-icon large" viewBox="0 0 48 48"><path d="M12 16h6l3-5h7l3 5h5a5 5 0 0 1 5 5v14a5 5 0 0 1-5 5H12a5 5 0 0 1-5-5V21a5 5 0 0 1 5-5Z"/><circle cx="24" cy="28" r="7"/></svg></div><div class="step-num">1</div>
+            <h3>Scan your home</h3><p>Take a guided indoor scan of key items in your kitchen, bedroom, and bathroom.</p>
+          </article>
+          <div class="dotted-line"></div>
+          <article class="how-card">
+            <div class="how-circle"><svg class="ui-icon large" viewBox="0 0 48 48"><path d="M20 7c-5 0-8 4-8 8 0 1 .2 2 .6 3A8 8 0 0 0 10 34c1 4 4 7 9 7 2 0 4-1 5-2 1 1 3 2 5 2 5 0 8-3 9-7a8 8 0 0 0-2.6-16A8 8 0 0 0 28 7c-2 0-3 .7-4 2-1-1.3-2-2-4-2Z"/><path d="M24 9v30M17 15c3 0 5 2 5 5M31 15c-3 0-5 2-5 5M16 30c4 0 6 2 6 5M32 30c-4 0-6 2-6 5"/></svg></div><div class="step-num">2</div>
+            <h3>AI analyzes materials &amp; wear</h3><p>AI analyzes visible materials, surface condition and wear patterns associated with potential microplastic exposure.</p>
+          </article>
+          <div class="dotted-line"></div>
+          <article class="how-card">
+            <div class="how-circle"><svg class="ui-icon large" viewBox="0 0 48 48"><path d="M24 5 39 11v11c0 10-6 17-15 21C15 39 9 32 9 22V11L24 5Z"/><path d="m17 24 5 5 10-11"/></svg></div><div class="step-num">3</div>
+            <h3>Get your results</h3><p>See your exposure score, top exposure sources, and personalized steps to lower your exposure.</p>
+          </article>
+        </div>
+      </section>
 
-  <!-- ─── SECTION 05 — TESTIMONIALS ────────────────── -->
-  <section class="section testimonials">
-    <p class="section-label">SECTION 05 — BETA FEEDBACK</p>
-    <h2 class="section-title">WHAT OUR <span class="cyan">BETA TESTERS SAY</span></h2>
-    <p class="section-sub">Early feedback from testers trying PurePath in their own<br/>homes ahead of launch.</p>
+      <section id="insights" class="insights-section section-grid">
+        <div class="insight-visual">
+          <div class="phone phone-summary"><div class="phone-notch"></div><div class="screen"><img src="exposure-summary.jpg" alt="PurePath Exposure Summary with elevated exposure status" /></div></div>
+          <div class="molecule molecule-left" aria-hidden="true"></div>
+        </div>
+        <div class="insight-copy">
+          <div class="section-kicker left">PERSONAL INSIGHTS</div>
+          <h2>Know what may be driving your exposure.<br>Change what matters first.</h2>
+          <div class="feature-list">
+            <article><div class="feature-icon"><svg class="ui-icon" viewBox="0 0 48 48"><path d="M9 31a16 16 0 1 1 30 0"/><path d="m24 24 10-8"/><circle cx="24" cy="24" r="2"/></svg></div><div><h3>Home Exposure Score</h3><p>Quick view of your home’s overall exposure potential.</p></div></article>
+            <article><div class="feature-icon"><svg class="ui-icon" viewBox="0 0 48 48"><path d="M10 11h28v26H10z"/><path d="M16 18h16M16 24h10M16 30h13"/><circle cx="36" cy="30" r="3"/></svg></div><div><h3>Top Exposure Sources</h3><p>See the items contributing most to your estimated exposure.</p></div></article>
+            <article><div class="feature-icon"><svg class="ui-icon" viewBox="0 0 48 48"><path d="M39 8C23 9 14 18 12 32c7-7 14-10 23-12-6 3-11 7-15 13"/><path d="M12 32c0 5 3 8 8 8"/></svg></div><div><h3>Lower-Exposure Swaps</h3><p>Personalized product swaps that can help reduce the biggest exposure contributors.</p></div></article>
+            <article><div class="feature-icon"><svg class="ui-icon" viewBox="0 0 48 48"><path d="M37 15a15 15 0 1 0 2 15"/><path d="M37 7v8h-8"/></svg></div><div><h3>Track Your Progress</h3><p>Re-scan after making changes and compare your updated score.</p></div></article>
+          </div>
+          <div class="molecule molecule-right" aria-hidden="true"></div>
+        </div>
+        <p class="score-disclaimer">PurePath scores estimate relative exposure potential based on detected materials, visible condition and user-provided information.<br>They do not measure microplastics in the body or provide a medical diagnosis.</p>
+      </section>
 
-    <div class="testimonial-grid">
-      <article class="t-card">
-        <div class="t-head"><span class="t-stars">★★★★★</span><span class="t-tag">KITCHEN</span></div>
-        <p class="t-quote">"I scanned my kitchen and my old non-stick pans came back flagged as high-risk. It gave me a clear list of what to swap first instead of feeling like I had to throw everything out at once."</p>
-        <div class="t-author"><div class="t-avatar">ML</div><div><strong>Mara L.</strong><span>Beta tester · San Francisco, CA</span></div></div>
-      </article>
+      <section id="early-access" class="launch-card">
+        <div class="launch-icon"><svg class="ui-icon large" viewBox="0 0 48 48"><path d="M24 5 39 11v11c0 10-6 17-15 21C15 39 9 32 9 22V11L24 5Z"/><path d="m17 24 5 5 10-11"/></svg></div>
+        <div class="launch-copy"><h2>Be the first to know when<br>PurePath launches.</h2><p>Pre-launch only available to first 500 signups.</p></div>
+        <form class="email-form email-form-inline signup-form" action="https://formspree.io/f/mbdnqvzn" method="POST"><label class="sr-only" for="footer-email">Email address</label><input id="footer-email" name="email" type="email" placeholder="Enter your email" required /><button type="submit">Get Early Access</button></form>
+      </section>
+    </main>
 
-      <article class="t-card">
-        <div class="t-head"><span class="t-stars">★★★★★</span><span class="t-tag">BEDROOM</span></div>
-        <p class="t-quote">"I pay attention to this stuff, and PurePath still surfaced things I hadn't thought about — like the synthetic materials in my mattress and pillows. The room-by-room breakdown made it easy to prioritize."</p>
-        <div class="t-author"><div class="t-avatar">JW</div><div><strong>James W.</strong><span>Beta tester · Austin, TX</span></div></div>
-      </article>
+    <footer class="site-footer">
+      <div class="footer-brand"><div class="brand"><span class="brand-mark"><svg viewBox="0 0 42 48"><path d="M8 5h13c9 0 14 4 14 12 0 8-5 13-15 13H8V5Z"/><path d="M12 9v31"/><path d="M20 31c7 0 13-4 17-10-1 12-7 20-18 22" class="leaf"/></svg></span><span class="brand-name">PurePath</span></div><p>The microplastic exposure scanner<br>for your home.</p></div>
+      <div><h4>PRODUCT</h4><a href="#how">How It Works</a><a href="#insights">Features</a><a href="#science">Science</a></div>
+      <div><h4>COMPANY</h4><a href="#early-access">FAQ</a><a href="privacy-policy.html">Privacy Policy</a><a href="terms-of-service.html">Terms of Service</a></div>
+      <div><h4>SUPPORT</h4><a href="mailto:hello@purepath.digital">Contact Support</a><a href="#">Instagram</a><a href="#">TikTok</a></div>
+      <div class="copyright">© 2026 PurePath. All rights reserved.</div>
+    </footer>
+  </div>
 
-      <article class="t-card">
-        <div class="t-head"><span class="t-stars">★★★★★</span><span class="t-tag">WHOLE HOME</span></div>
-        <p class="t-quote">"The swap suggestions were practical, not overwhelming — step by step, room by room. It felt less like being scared and more like having a plan I could actually work through."</p>
-        <div class="t-author"><div class="t-avatar">PS</div><div><strong>Priya S.</strong><span>Beta tester · London, UK</span></div></div>
-      </article>
-
-      <article class="t-card">
-        <div class="t-head"><span class="t-stars">★★★★★</span><span class="t-tag">EASE OF USE</span></div>
-        <p class="t-quote">"I went in skeptical about how useful a phone scan could be, but the interface is genuinely nice and the results are easy to understand. Being able to point my camera at something and get a plain-English read is the whole appeal."</p>
-        <div class="t-author"><div class="t-avatar">RK</div><div><strong>Rian K.</strong><span>Beta tester · Berlin, DE</span></div></div>
-      </article>
-
-      <article class="t-card">
-        <div class="t-head"><span class="t-stars">★★★★★</span><span class="t-tag">EVERYDAY USE</span></div>
-        <p class="t-quote">"The scans are fast and the risk breakdowns are clear enough that I could explain them to my kids — who now ask whether the cutting board is 'PurePath approved.'"</p>
-        <div class="t-author"><div class="t-avatar">AT</div><div><strong>Alex T.</strong><span>Beta tester · Brooklyn, NY</span></div></div>
-      </article>
-    </div>
-
-    <p class="t-disclaimer">Beta-tester feedback shared with permission. PurePath is an educational wellness tool and does not provide medical, diagnostic, or safety-testing advice.</p>
-  </section>
-
-  <!-- ─── SECTION — ORIGIN STORY ───────────────────── -->
-  <section class="section story" id="story">
-    <p class="section-label">SECTION 06 — WHY WE BUILT THIS</p>
-    <h2 class="section-title">OUR <span class="cyan">ORIGIN STORY</span></h2>
-
-    <div class="story-grid">
-      <div class="story-body">
-        <p class="story-lead">PurePath didn't start in a lab. It started with a podcast and a test kit.</p>
-        <p class="story-p">Like a lot of people, we heard <strong>Dr. Shanna Swan</strong> — the environmental epidemiologist behind <em>Count Down</em> — break down the research on microplastics and endocrine-disrupting chemicals on <strong>The Joe Rogan Experience (episode #2476)</strong>. The takeaway was hard to ignore: these materials are in our homes, our food, and increasingly, our bodies.</p>
-        <p class="story-p">So one of us ordered an <strong>at-home microplastics test</strong> — and the result was a wake-up call. It raised the obvious question: <em>if it's showing up in me, where in my home is it actually coming from?</em></p>
-        <p class="story-p">There was no simple way to answer that. So we started building one. PurePath is our attempt to turn that anxiety into something practical — a way to look at the everyday objects around you, understand the material risks, and make better swaps at your own pace.</p>
-        <a class="story-link" href="https://open.spotify.com/episode/6pLW2tMx4Kw5qaeAcxj0Lj?si=yPvV4L_dT42qGpTWjhDOHA" target="_blank" rel="noopener">Listen to JRE #2476 with Dr. Shanna Swan →</a>
-      </div>
-
-      <aside class="story-quote">
-        <span class="story-quote-mark">“</span>
-        <p class="story-quote-text">Everybody is exposed. The question isn't whether it's in your home — it's where, and what you choose to do about it.</p>
-        <p class="story-quote-attr">— The idea behind PurePath</p>
-      </aside>
-    </div>
-  </section>
-
-  <!-- ─── EARLY ACCESS / EMAIL CAPTURE ─────────────── -->
-  <section class="section early-access" id="early-access">
-    <div class="ea-card">
-      <p class="section-label">GET EARLY ACCESS</p>
-      <h2 class="ea-title">BE FIRST TO <span class="cyan glow">SCAN YOUR HOME.</span></h2>
-      <p class="ea-sub">PurePath is launching soon. Join the early-access list and we'll email you the moment it's ready — plus early looks at what we're building.</p>
-
-      <!--
-        EMAIL CAPTURE — NOT YET ACTIVE.
-        This form does not send anywhere yet (per request). When ready to go live,
-        wire it to a backend that delivers signups to community@purepath.digital
-        (e.g. a Formspree endpoint: set action="https://formspree.io/f/XXXX" method="POST"
-        and remove the e.preventDefault() handler in app.js). Until then it shows a
-        local "thanks" confirmation and stores nothing.
-      -->
-      <form id="early-access-form" class="ea-form" action="https://formspree.io/f/mbdnqvzn" method="POST">
-      <input type="email" name="email" class="ea-input" placeholder="you@email.com" autocomplete="email" required />
-      <button type="submit" class="ea-btn">GET EARLY ACCESS</button>
-      </form>
-      <p class="ea-note" id="ea-note">No spam, ever. Unsubscribe anytime. See our <a href="/privacy-policy.html">Privacy Policy</a>.</p>
-      <p class="ea-success" id="ea-success" hidden>You're on the list — thanks! We'll be in touch at launch.</p>
-
-      <p class="ea-comingsoon">
-        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.5 12.6c0-2.7 2.2-4 2.3-4.1-1.3-1.8-3.2-2.1-3.9-2.1-1.7-.2-3.2 1-4.1 1-.9 0-2.2-1-3.6-.9-1.9 0-3.6 1.1-4.5 2.7-1.9 3.3-.5 8.2 1.4 10.9.9 1.3 2 2.8 3.4 2.8s1.9-.9 3.6-.9 2.2.9 3.6.9 2.5-1.3 3.4-2.7c1.1-1.5 1.5-3 1.5-3.1-.1-.1-3-1.1-3-4.5zM14.7 4.7c.8-.9 1.3-2.2 1.1-3.4-1.1.1-2.4.7-3.2 1.7-.7.8-1.4 2.1-1.2 3.3 1.3.1 2.5-.7 3.3-1.6z"/></svg>
-        Coming soon to iOS
-      </p>
-    </div>
-  </section>
-
-  <!-- ─── FINAL CTA ────────────────────────────────── -->
-  <section class="section final-cta" id="download">
-    <p class="section-label">THE FINAL PROTOCOL</p>
-    <h2 class="final-title">
-      A HEALTHIER HOME<br/>
-      <span class="cyan glow">IS A CHOICE.</span>
-    </h2>
-    <p class="final-sub">You can't change what you can't see. Join a growing community of health-conscious households learning what's in their homes — and building a plan to swap it out, one room at a time.</p>
-    <a href="#early-access" class="download-auditor">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12M6 11l6 6 6-6M5 21h14"/></svg>
-      GET EARLY ACCESS
-    </a>
-  </section>
-
-  <!-- ─── FOOTER ──────────────────────────────────── -->
-  <footer class="footer">
-    <div class="footer-inner">
-      <div class="brand">
-        <span class="brand-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg>
-        </span>
-        <span class="brand-name">Pure<span class="brand-accent">Path</span></span>
-      </div>
-      <div class="footer-links">
-        <a href="#early-access">Early Access</a>
-        <a href="#story">Our Story</a>
-        <a href="privacy-policy.html">Privacy Policy</a>
-        <a href="/terms-of-service.html">Terms of Service</a>
-      </div>
-      <p class="copyright">© 2026 PurePath. All rights reserved.</p>
-    </div>
-  </footer>
-
-  <script src="app.js?v=2"></script>
-  <div id="cookie-banner" style="display:none; position:fixed; bottom:20px; left:20px; right:20px; max-width:600px; margin:0 auto; background:#0a0a0a; border:1px solid rgba(0,229,255,0.25); color:#fff; padding:18px 22px; font-family:'Inter', sans-serif; font-size:14px; line-height:1.5; z-index:9999; border-radius:12px; box-shadow:0 8px 32px rgba(0,0,0,0.5); display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:16px;">
-  <span style="color:rgba(255,255,255,0.85);">This site uses cookies to improve your experience. By continuing to browse, you agree to our use of cookies. <a href="/privacy-policy.html" style="color:#00E5FF; text-decoration:underline;">Learn more</a></span>
-  <button onclick="document.getElementById('cookie-banner').style.display='none'; localStorage.setItem('cookieConsent','true');" style="background:#00E5FF; color:#0a0a0a; border:none; padding:9px 18px; border-radius:8px; font-family:'Inter', sans-serif; font-weight:600; font-size:13px; cursor:pointer; white-space:nowrap; flex-shrink:0;">Got it</button>
-</div>
-
-<script>
-  if (!localStorage.getItem('cookieConsent')) {
-    document.getElementById('cookie-banner').style.display = 'flex';
-  }
-</script>
+  <script>
+  document.querySelectorAll('.signup-form').forEach(function (form) {
+    form.addEventListener('submit', async function (event) {
+      event.preventDefault();
+      var button = form.querySelector('button[type="submit"]');
+      var originalText = button ? button.textContent : 'Get Early Access';
+      if (button) { button.disabled = true; button.textContent = 'Joining...'; }
+      try {
+        var response = await fetch(form.action, {
+          method: 'POST',
+          body: new FormData(form),
+          headers: { Accept: 'application/json' }
+        });
+        if (!response.ok) { throw new Error('Signup rejected'); }
+        if (typeof window.twq === 'function') {
+          window.twq('event', 'tw-rdazr-re9w7', {});
+        }
+        form.reset();
+        if (button) { button.textContent = "You're in!"; }
+      } catch (error) {
+        console.error('Early-access signup failed:', error);
+        if (button) { button.disabled = false; button.textContent = originalText; }
+        alert('Your signup could not be submitted. Please try again.');
+      }
+    });
+  });
+  </script>
 </body>
 </html>
-
