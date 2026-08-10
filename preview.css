@@ -407,3 +407,8 @@
   .about-scan-target{transform:scale(.78)}
   .about-note p{font-size:9.5px}
 }
+/* Insights phone — brighter frame + glow to match hero phone */
+.phone-summary{
+  border:1.5px solid rgba(183,229,255,.85);
+  box-shadow:0 0 0 2px rgba(22,78,103,.85),0 0 55px rgba(48,196,255,.32);
+}
