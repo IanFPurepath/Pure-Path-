@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="icon" type="image/png" href="/Favicon%20PP.png">
+  <title>PurePath — Frequently Asked Questions</title>
+  <meta name="description" content="Answers to common questions about PurePath: how the home microplastic exposure scan works, what it costs, and what you get." />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="PurePath — Frequently Asked Questions" />
+  <meta property="og:description" content="Everything you need to know before your first PurePath home scan." />
+  <meta property="og:url" content="https://www.purepath.digital/faq.html" />
+  <meta property="og:image" content="https://www.purepath.digital/og-image-v2.png?v=3" />
+  <link rel="canonical" href="https://www.purepath.digital/faq.html" />
+  <link rel="stylesheet" href="preview.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+<style>
+/* =========================================================
+   PUREPATH FAQ — added section only
+   ========================================================= */
+.faq-section{
+  margin:10px 58px 50px;
+  padding:54px 52px 50px;
+  border:1px solid rgba(43,190,237,.32);
+  border-radius:18px;
+  background:
+    radial-gradient(circle at 18% 0%,rgba(19,129,170,.10),transparent 36%),
+    linear-gradient(145deg,rgba(3,18,28,.96),rgba(2,10,16,.98));
+  box-shadow:inset 0 0 48px rgba(26,167,216,.025),0 24px 70px rgba(0,0,0,.18);
+}
+.faq-heading{text-align:center;max-width:680px;margin:0 auto 38px}
+.faq-heading h2{margin:8px 0 10px;font-size:36px;line-height:1.06;letter-spacing:-.03em}
+.faq-heading>p{margin:0;color:#8e9ba4;font-size:14px;line-height:1.55}
+.faq-layout{display:grid;grid-template-columns:minmax(250px,.72fr) minmax(0,1.65fr);gap:34px;align-items:start}
+.pricing-panel{
+  position:sticky;top:92px;padding:25px 24px 22px;
+  border:1px solid rgba(48,205,249,.28);border-radius:14px;
+  background:linear-gradient(155deg,rgba(5,31,45,.90),rgba(2,14,22,.96));
+  box-shadow:inset 0 0 32px rgba(41,198,241,.035)
+}
+.pricing-eyebrow{color:var(--cyan);font-size:9px;font-weight:850;letter-spacing:.18em;margin-bottom:7px}
+.pricing-panel>h3{margin:0 0 19px;font-size:19px;line-height:1.22}
+.price-option{display:flex;align-items:center;justify-content:space-between;gap:18px;padding:15px 0;border-top:1px solid rgba(82,146,170,.18)}
+.price-option:first-of-type{border-top:0}
+.price-option>div{display:grid;gap:3px}
+.price-option strong{font-size:13px}
+.price-option>div span{color:#748792;font-size:10.5px}
+.price-option>b{color:#f5fbff;font-size:20px;white-space:nowrap}
+.price-option>b span{color:#7e939e;font-size:10px;font-weight:650;margin-left:2px}
+.pricing-note{margin:15px 0 0;padding-top:15px;border-top:1px solid rgba(82,146,170,.18);color:#70838e;font-size:10px;line-height:1.5}
+.faq-list{display:grid;gap:10px}
+.faq-list details{
+  border:1px solid rgba(49,189,231,.22);border-radius:12px;background:rgba(2,14,21,.73);
+  overflow:hidden;transition:border-color .2s ease,background .2s ease,box-shadow .2s ease
+}
+.faq-list details[open]{border-color:rgba(55,210,252,.42);background:rgba(3,22,32,.91);box-shadow:inset 0 0 24px rgba(40,197,240,.025)}
+.faq-list summary{
+  min-height:62px;padding:17px 18px 17px 20px;display:flex;align-items:center;justify-content:space-between;
+  gap:20px;cursor:pointer;list-style:none;color:#eef7fb;font-size:13.5px;font-weight:760;line-height:1.3
+}
+.faq-list summary::-webkit-details-marker{display:none}
+.faq-plus{
+  position:relative;width:23px;height:23px;min-width:23px;border:1px solid rgba(49,205,247,.40);
+  border-radius:50%;transition:transform .22s ease,border-color .22s ease
+}
+.faq-plus::before,.faq-plus::after{
+  content:"";position:absolute;left:50%;top:50%;width:9px;height:1px;transform:translate(-50%,-50%);background:var(--cyan)
+}
+.faq-plus::after{transform:translate(-50%,-50%) rotate(90deg);transition:opacity .2s ease}
+details[open] .faq-plus{transform:rotate(180deg);border-color:rgba(49,219,255,.70)}
+details[open] .faq-plus::after{opacity:0}
+.faq-answer{padding:0 58px 19px 20px;color:#92a1aa;font-size:12px;line-height:1.65}
+.faq-answer strong{color:#dff8ff}
+@media(max-width:980px){
+  .faq-section{margin:5px 24px 42px;padding:42px 26px 38px}
+  .faq-layout{grid-template-columns:1fr}
+  .pricing-panel{position:static;display:grid;grid-template-columns:repeat(3,1fr);gap:0 18px}
+  .pricing-panel .pricing-eyebrow,.pricing-panel>h3,.pricing-note{grid-column:1/-1}
+  .price-option{display:grid;align-content:start;padding:15px 0 10px}
+}
+@media(max-width:620px){
+  .faq-section{margin:0 16px 36px;padding:34px 16px 28px}
+  .faq-heading{margin-bottom:28px}
+  .faq-heading h2{font-size:31px}
+  .pricing-panel{display:block;padding:21px 18px 19px}
+  .price-option{display:flex}
+  .faq-list summary{padding:16px 14px;font-size:13px}
+  .faq-answer{padding:0 45px 17px 14px;font-size:11.5px}
+}
+</style>
+</head>
+<body>
+  <div class="page-shell" id="top">
+    <header class="site-header">
+      <a class="brand" href="index.html" aria-label="PurePath home">
+        <span class="brand-mark" aria-hidden="true">
+          <img src="Favicon1.png" alt="" style="width:100%;height:100%;object-fit:contain;filter:drop-shadow(0 0 8px rgba(67,221,255,.35))" />
+        </span>
+        <span class="brand-name">PurePath</span>
+      </a>
+      <nav class="desktop-nav" aria-label="Primary navigation">
+        <a href="index.html">Home</a>
+        <a href="index.html#how">How It Works</a>
+        <a href="index.html#science">Science</a>
+        <a href="index.html#insights">Features</a>
+        <a class="active" href="faq.html">FAQ</a>
+      </nav>
+      <a class="pill-button header-cta" href="index.html#early-access">Get Early Access</a>
+    </header>
+
+    <main>
+      <div style="padding:22px 58px 0">
+        <a href="index.html" style="display:inline-flex;align-items:center;gap:8px;color:var(--cyan);font-size:13px;font-weight:700;letter-spacing:.02em">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
+          Back to home
+        </a>
+      </div>
+
+      <section id="faq" class="faq-section">
+        <div class="faq-heading">
+          <div class="section-kicker">FREQUENTLY ASKED QUESTIONS</div>
+          <h2>Questions, answered.</h2>
+          <p>Everything you need to know before your first PurePath home scan.</p>
+        </div>
+
+        <div class="faq-layout">
+          <aside class="pricing-panel" aria-label="PurePath pricing">
+            <div class="pricing-eyebrow">CURRENT PRICING</div>
+            <h3>Choose how you want to scan.</h3>
+
+            <div class="price-option">
+              <div><strong>Single Home Scan</strong><span>One scan only</span></div>
+              <b>$4.99</b>
+            </div>
+
+            <div class="price-option">
+              <div><strong>Monthly</strong><span>Subscription plan</span></div>
+              <b>$9.99<span>/mo</span></b>
+            </div>
+
+            <div class="price-option">
+              <div><strong>Yearly</strong><span>Subscription plan</span></div>
+              <b>$89.99<span>/yr</span></b>
+            </div>
+
+            <p class="pricing-note">The $4.99 option includes one home scan. Monthly and yearly plans are subscription options.</p>
+          </aside>
+
+          <div class="faq-list">
+            <details open>
+              <summary><span>What is PurePath?</span><span class="faq-plus" aria-hidden="true"></span></summary>
+              <div class="faq-answer">PurePath is a camera-based home exposure scanner that helps you identify materials, visible wear and household items that may contribute to potential microplastic exposure. It then helps you prioritize what to change first.</div>
+            </details>
+
+            <details>
+              <summary><span>How does a PurePath scan work?</span><span class="faq-plus" aria-hidden="true"></span></summary>
+              <div class="faq-answer">PurePath guides you through photo scans of key items in your home. Its AI analyzes visible materials, surface condition and wear patterns, then combines that information with your answers to generate personalized exposure insights.</div>
+            </details>
+
+            <details>
+              <summary><span>What areas of my home does PurePath scan?</span><span class="faq-plus" aria-hidden="true"></span></summary>
+              <div class="faq-answer">The guided home scan focuses on three key exposure zones: your kitchen, bedding and bathroom. PurePath looks at the materials and condition of the items you use most in those areas.</div>
+            </details>
+
+            <details>
+              <summary><span>How much does PurePath cost?</span><span class="faq-plus" aria-hidden="true"></span></summary>
+              <div class="faq-answer">PurePath offers a <strong>Single Home Scan for $4.99</strong>, which includes <strong>one scan only</strong>. The <strong>monthly plan is $9.99/month</strong> and the <strong>yearly plan is $89.99/year</strong>. Monthly and yearly memberships include ongoing access to re-scan and track changes over time.</div>
+            </details>
+
+            <details>
+              <summary><span>Does PurePath actually measure microplastics?</span><span class="faq-plus" aria-hidden="true"></span></summary>
+              <div class="faq-answer">No. PurePath does not physically measure microplastic particles in your body or home. It estimates relative exposure potential using detected materials, visible condition, wear patterns and information you provide.</div>
+            </details>
+
+            <details>
+              <summary><span>How is my exposure score determined?</span><span class="faq-plus" aria-hidden="true"></span></summary>
+              <div class="faq-answer">Your score is based on the materials PurePath identifies, their visible condition and wear, the area of the home where they are used, and relevant information you provide during the scan. The score is designed to help you compare and prioritize potential exposure sources.</div>
+            </details>
+
+            <details>
+              <summary><span>What do I get after my scan?</span><span class="faq-plus" aria-hidden="true"></span></summary>
+              <div class="faq-answer">You receive an exposure score, room-by-room insights, your highest-priority exposure sources and personalized lower-exposure swaps so you can focus on the changes that may matter most.</div>
+            </details>
+
+            <details>
+              <summary><span>Can I track changes after I make swaps?</span><span class="faq-plus" aria-hidden="true"></span></summary>
+              <div class="faq-answer">Yes. <strong>Monthly and yearly PurePath members can re-scan their home after making changes and compare their updated results over time.</strong> The <strong>$4.99 Single Home Scan includes one scan only and does not include re-scans.</strong></div>
+            </details>
+
+            <details>
+              <summary><span>Is PurePath a medical test or medical advice?</span><span class="faq-plus" aria-hidden="true"></span></summary>
+              <div class="faq-answer">No. PurePath is an informational home exposure tool. It does not diagnose, treat or prevent medical conditions and should not be used as a substitute for professional medical advice or laboratory testing.</div>
+            </details>
+
+            <details>
+              <summary><span>Do I need any special equipment?</span><span class="faq-plus" aria-hidden="true"></span></summary>
+              <div class="faq-answer">No special testing equipment is required. PurePath uses guided photo scans from your phone camera together with your responses to analyze your home environment.</div>
+            </details>
+          </div>
+        </div>
+
+        <div style="text-align:center;margin-top:40px">
+          <a class="pill-button" href="index.html">Back to homepage</a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-brand"><div class="brand"><span class="brand-mark"><svg viewBox="0 0 42 48"><path d="M8 5h13c9 0 14 4 14 12 0 8-5 13-15 13H8V5Z"/><path d="M12 9v31"/><path d="M20 31c7 0 13-4 17-10-1 12-7 20-18 22" class="leaf"/></svg></span><span class="brand-name">PurePath</span></div><p>The microplastic exposure scanner<br>for your home.</p></div>
+      <div><h4>PRODUCT</h4><a href="index.html#how">How It Works</a><a href="index.html#insights">Features</a><a href="index.html#science">Science</a></div>
+      <div><h4>COMPANY</h4><a href="faq.html">FAQ</a><a href="privacy-policy.html">Privacy Policy</a><a href="terms-of-service.html">Terms of Service</a></div>
+      <div><h4>SUPPORT</h4><a href="mailto:hello@purepath.digital">Contact Support</a><a href="#">Instagram</a><a href="#">TikTok</a></div>
+      <div class="copyright">© 2026 PurePath. All rights reserved.</div>
+    </footer>
+  </div>
+</body>
+</html>
