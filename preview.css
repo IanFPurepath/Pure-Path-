@@ -412,3 +412,20 @@
   border:1.5px solid rgba(183,229,255,.85);
   box-shadow:0 0 0 2px rgba(22,78,103,.85),0 0 55px rgba(48,196,255,.32);
 }
+
+/* Insights phone — glowing rings behind, matching hero */
+.insight-visual::before,
+.insight-visual::after{
+  content:"";
+  position:absolute;
+  left:50%;
+  top:50%;
+  transform:translate(-50%,-50%);
+  border:1px solid rgba(33,185,255,.30);
+  border-radius:50%;
+  z-index:0;
+  pointer-events:none;
+}
+.insight-visual::before{width:520px;height:130px}
+.insight-visual::after{width:380px;height:92px}
+.phone-summary{z-index:2}
