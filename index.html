@@ -37,21 +37,25 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
-  <!-- X conversion tracking base code -->
+  <!-- X conversion tracking base code (consent-gated) -->
   <script>
-  !function(e,t,n,s,u,a){
-    e.twq||(s=e.twq=function(){
-      s.exe?s.exe.apply(s,arguments):s.queue.push(arguments);
-    },
-    s.version='1.1',
-    s.queue=[],
-    u=t.createElement(n),
-    u.async=!0,
-    u.src='https://static.ads-twitter.com/uwt.js',
-    a=t.getElementsByTagName(n)[0],
-    a.parentNode.insertBefore(u,a))
-  }(window,document,'script');
-  twq('config','rdazr');
+  function ppLoadPixel(){
+    if(window.twq){twq('config','rdazr');return;}
+    !function(e,t,n,s,u,a){
+      e.twq||(s=e.twq=function(){
+        s.exe?s.exe.apply(s,arguments):s.queue.push(arguments);
+      },
+      s.version='1.1',
+      s.queue=[],
+      u=t.createElement(n),
+      u.async=!0,
+      u.src='https://static.ads-twitter.com/uwt.js',
+      a=t.getElementsByTagName(n)[0],
+      a.parentNode.insertBefore(u,a))
+    }(window,document,'script');
+    twq('config','rdazr');
+  }
+  try{ if(localStorage.getItem('pp-cookie-consent')==='accepted'){ ppLoadPixel(); } }catch(e){}
   </script>
   <!-- End X conversion tracking base code -->
 </head>
@@ -275,8 +279,8 @@
 
     <footer class="site-footer">
       <div class="footer-brand"><div class="brand"><span class="brand-mark"><svg viewBox="0 0 42 48"><path d="M8 5h13c9 0 14 4 14 12 0 8-5 13-15 13H8V5Z"/><path d="M12 9v31"/><path d="M20 31c7 0 13-4 17-10-1 12-7 20-18 22" class="leaf"/></svg></span><span class="brand-name">PurePath</span></div><p>The microplastic exposure scanner<br>for your home.</p></div>
-      <div><h4>PRODUCT</h4><a href="#how">How It Works</a><a href="#insights">Features</a><a href="#science">Science</a></div>
-      <div><h4>COMPANY</h4><a href="faq.html">FAQ</a><a href="privacy-policy.html">Privacy Policy</a><a href="terms-of-service.html">Terms of Service</a></div>
+      <div><h4>PRODUCT</h4><a href="#how">How It Works</a><a href="#science">Our Approach</a></div>
+      <div><h4>COMPANY</h4><a href="faq.html">FAQ</a><a href="privacy-policy.html">Privacy Policy</a><a href="terms-of-service.html">Terms of Service</a><a href="cookie-policy.html">Cookie Policy</a></div>
       <div><h4>SUPPORT</h4><a href="mailto:hello@purepath.digital">Contact Support</a><a href="#">Instagram</a><a href="#">TikTok</a></div>
       <div class="copyright">© 2026 PurePath. All rights reserved.</div>
     </footer>
@@ -296,7 +300,9 @@
           headers: { Accept: 'application/json' }
         });
         if (!response.ok) { throw new Error('Signup rejected'); }
-        if (typeof window.twq === 'function') {
+        var okCookies = false;
+        try { okCookies = localStorage.getItem('pp-cookie-consent') === 'accepted'; } catch (e) {}
+        if (okCookies && typeof window.twq === 'function') {
           window.twq('event', 'tw-rdazr-re9w7', {});
         }
         form.reset();
@@ -308,6 +314,41 @@
       }
     });
   });
+  </script>
+
+  <div id="pp-cookie-banner" class="pp-cookie-banner" role="dialog" aria-live="polite" aria-label="Cookie consent" hidden>
+    <p class="pp-cookie-text">We use cookies and similar tracking to understand site traffic and measure our advertising. See our <a href="cookie-policy.html">Cookie Policy</a>.</p>
+    <div class="pp-cookie-actions">
+      <button type="button" id="pp-cookie-decline" class="pp-cookie-btn pp-cookie-decline">Decline</button>
+      <button type="button" id="pp-cookie-accept" class="pp-cookie-btn pp-cookie-accept">Accept</button>
+    </div>
+  </div>
+  <style>
+  .pp-cookie-banner{position:fixed;left:16px;right:16px;bottom:16px;z-index:9999;max-width:560px;margin:0 auto;display:flex;flex-wrap:wrap;align-items:center;gap:14px 18px;padding:16px 18px;border:1px solid rgba(49,195,245,.4);border-radius:14px;background:linear-gradient(145deg,rgba(6,22,32,.98),rgba(3,12,19,.98));box-shadow:0 18px 60px rgba(0,0,0,.5)}
+  .pp-cookie-text{margin:0;flex:1;min-width:220px;color:#c4ced5;font-size:12.5px;line-height:1.55}
+  .pp-cookie-text a{color:var(--cyan);text-decoration:underline}
+  .pp-cookie-actions{display:flex;gap:10px;margin-left:auto}
+  .pp-cookie-btn{border:0;border-radius:999px;padding:9px 20px;font:inherit;font-weight:800;font-size:13px;cursor:pointer}
+  .pp-cookie-accept{background:linear-gradient(90deg,#4ce0ff,#4a9cff);color:#00131d}
+  .pp-cookie-decline{background:transparent;border:1px solid rgba(140,160,172,.5);color:#c4ced5}
+  @media(max-width:520px){.pp-cookie-actions{width:100%;margin-left:0}.pp-cookie-btn{flex:1}}
+  </style>
+  <script>
+  (function(){
+    var KEY='pp-cookie-consent';
+    var banner=document.getElementById('pp-cookie-banner');
+    if(!banner) return;
+    var stored;
+    try{ stored=localStorage.getItem(KEY); }catch(e){ stored=null; }
+    if(!stored){ banner.hidden=false; }
+    function choose(v){
+      try{ localStorage.setItem(KEY,v); }catch(e){}
+      banner.hidden=true;
+      if(v==='accepted' && typeof ppLoadPixel==='function'){ ppLoadPixel(); }
+    }
+    document.getElementById('pp-cookie-accept').addEventListener('click',function(){ choose('accepted'); });
+    document.getElementById('pp-cookie-decline').addEventListener('click',function(){ choose('declined'); });
+  })();
   </script>
 </body>
 </html>
