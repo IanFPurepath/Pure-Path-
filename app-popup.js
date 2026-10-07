@@ -14,7 +14,7 @@
   var HEADLINE = 'Your home, scanned.';
   var SUBLINE = 'Spot plastic risks room by room with PurePath.';
   var DISMISS_KEY = 'pp-app-popup-dismissed';
-  var HIDE_DAYS = 7;
+   var HIDE_DAYS = 0;
   var SCROLL_TRIGGER = 250;   // pixels scrolled before it appears
    var TIME_TRIGGER = 2000;    // or after this many milliseconds
 
