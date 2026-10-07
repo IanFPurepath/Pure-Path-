@@ -16,7 +16,7 @@
   var DISMISS_KEY = 'pp-app-popup-dismissed';
   var HIDE_DAYS = 7;
   var SCROLL_TRIGGER = 250;   // pixels scrolled before it appears
-  var TIME_TRIGGER = 6000;    // or after this many milliseconds
+   var TIME_TRIGGER = 2000;    // or after this many milliseconds
 
   try {
     var last = parseInt(localStorage.getItem(DISMISS_KEY) || '0', 10);
