@@ -17,7 +17,7 @@
    var HIDE_DAYS = 0;
   var SCROLL_TRIGGER = 250;   // pixels scrolled before it appears
    var TIME_TRIGGER = 2000;    // or after this many milliseconds
-     var AUTO_HIDE_MS = 15000;   // closes itself this long after appearing (0 = never)
+  var AUTO_HIDE_MS = 15000;   // closes itself this long after appearing (0 = never)
 
   try {
     var last = parseInt(localStorage.getItem(DISMISS_KEY) || '0', 10);
@@ -98,13 +98,13 @@
       requestAnimationFrame(function () { pop.classList.add('pp-in'); });
       if (AUTO_HIDE_MS > 0) { setTimeout(function () { hide(true); }, AUTO_HIDE_MS); }
     }
-        function hide(auto) {
+    function hide(auto) {
       pop.classList.remove('pp-in');
+      // only a real close-click counts as a dismissal; the auto-close must not suppress it next visit
       if (auto !== true) {
         try { localStorage.setItem(DISMISS_KEY, String(Date.now())); } catch (e) {}
       }
       setTimeout(function () { if (pop.parentNode) { pop.parentNode.removeChild(pop); } }, 600);
-    }
     }
 
     pop.querySelector('.pp-app-close').addEventListener('click', function (e) {
